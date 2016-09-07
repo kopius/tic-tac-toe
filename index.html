@@ -7,40 +7,71 @@
     </head>
     <body class="container-fluid">
 
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign up</legend>
-          <input type="email" name="credentials[email]" placeholder="Enter your email">
-          <input type="password" name="credentials[password]" placeholder="Create a password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
-          <input type="submit" name="submit" value="Sign up">
-        </fieldset>
-      </form>
+      <!-- THIS SECTION CONTAINS THE GAME BOARD -->
+      <section class='game-board-box'>
+        <div class='game-board'>
+          <div class="row game-board-row">
+            <div id="cell0" class="col-xs-4 game-board-col">[empty]</div>
+            <div id="cell1" class="col-xs-4 game-board-col">[empty]</div>
+            <div id="cell2" class="col-xs-4 game-board-col">[empty]</div>
+          </div>
+          <div class="row game-board-row">
+            <div id="cell3" class="col-xs-4 game-board-col">[empty]</div>
+            <div id="cell4" class="col-xs-4 game-board-col">[empty]</div>
+            <div id="cell5" class="col-xs-4 game-board-col">[empty]</div>
+          </div>
+          <div class="row game-board-row">
+            <div id="cell6" class="col-xs-4 game-board-col">[empty]</div>
+            <div id="cell7" class="col-xs-4 game-board-col">[empty]</div>
+            <div id="cell8" class="col-xs-4 game-board-col">[empty]</div>
+          </div>
+        </div>
+      </section>
 
-      <form id="sign-in">
-        <fieldset>
-            <legend>Sign in</legend>
+      <!-- USER AUTHENTICATION FORMS -->
+      <!-- these are temporarily shoved aside in a section while the game board & logic are being developed -->
+      <section class='auth-forms'>
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign up</legend>
             <input type="email" name="credentials[email]" placeholder="Enter your email">
-            <input type="password" name="credentials[password]" placeholder="Enter your password">
-            <input type="submit" name="submit" value="Sign in">
+            <br>
+            <input type="password" name="credentials[password]" placeholder="Create a password">
+            <br>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
+            <br>
+            <input type="submit" name="submit" value="Sign up">
           </fieldset>
-      </form>
-
-      <form id="change-password">
-        <fieldset>
-          <legend>Change Password</legend>
-          <input type="password" name="passwords[old]" placeholder="Enter current password">
-          <input type="password" name="passwords[new]" placeholder="Choose new password">
-          <input type="submit" name="submit" value="Change Password">
-        </fieldset>
-      </form>
-
-      <form id="sign-out">
-        <fieldset>
-          <legend>Sign Out</legend>
-          <input type="submit" name="submit" value="Sign Out">
-        </fieldset>
-      </form>
-
+        </form>
+        <hr>
+        <form id="sign-in">
+          <fieldset>
+              <legend>Sign in</legend>
+              <input type="email" name="credentials[email]" placeholder="Enter your email">
+              <br>
+              <input type="password" name="credentials[password]" placeholder="Enter your password">
+              <br>
+              <input type="submit" name="submit" value="Sign in">
+            </fieldset>
+        </form>
+        <hr>
+        <form id="change-password">
+          <fieldset>
+            <legend>Change Password</legend>
+            <input type="password" name="passwords[old]" placeholder="Enter current password">
+            <br>
+            <input type="password" name="passwords[new]" placeholder="Choose new password">
+            <br>
+            <input type="submit" name="submit" value="Change Password">
+          </fieldset>
+        </form>
+        <hr>
+        <form id="sign-out">
+          <fieldset>
+            <legend>Sign Out</legend>
+            <input type="submit" name="submit" value="Sign Out">
+          </fieldset>
+        </form>
+      </section>
     </body>
 </html>
