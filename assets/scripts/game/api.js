@@ -13,7 +13,7 @@ const createGame = function () {
   });
 };
 
-const takeCellOne = function () {
+const patchGame = function (index, value, over) {
   let token = app.user.token;
   let id = app.user.game.id;
 
@@ -26,10 +26,10 @@ const takeCellOne = function () {
     data: {
       "game": {
         "cell": {
-          "index": 0,
-          "value": 'x'
+          "index": index,
+          "value": value
         },
-        "over": false
+        "over": over
       }
     }
   });
@@ -37,5 +37,5 @@ const takeCellOne = function () {
 
 module.exports = {
   createGame,
-  takeCellOne,
+  patchGame,
 };

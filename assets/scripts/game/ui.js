@@ -13,13 +13,16 @@ const createGameFailure = function (error) {
   console.log(error);
 };
 
-const takeCellOneSuccess = function (data) {
+const updateGameSuccess = function (data) {
   app.user.game = data.game;
-  console.log("You took cell one!");
+  console.log("Game updated successfully");
   console.log("app.user.game is ", app.user.game);
+
+  // add code that updates the UI for realsies
+
 };
 
-const takeCellOneFailure = function (error) {
+const updateGameFailure = function (error) {
   console.log(error);
   console.log("app.user.game is ", app.user.game);
 };
@@ -27,6 +30,6 @@ const takeCellOneFailure = function (error) {
 module.exports = {
   createGameSuccess,
   createGameFailure,
-  takeCellOneSuccess,
-  takeCellOneFailure,
+  updateGameSuccess,
+  updateGameFailure,
 };
