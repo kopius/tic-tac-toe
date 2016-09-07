@@ -11,8 +11,17 @@ const onCreateGame = function (event) {
     .fail(ui.createGameFailure);
 };
 
+const onTakeCellOne = function (event) {
+  event.preventDefault();
+
+  api.takeCellOne()
+    .done(ui.takeCellOneSuccess)
+    .fail(ui.takeCellOneFailure);
+};
+
 const addHandlers = function () {
   $('#create-game').on('submit', onCreateGame);
+  $('#cell1').on('click', onTakeCellOne);
 };
 
 module.exports = {
