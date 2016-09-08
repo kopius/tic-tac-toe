@@ -28,7 +28,6 @@ const isOver = function (index, value) {
 
   // apply the most recent play to our copy
   cells[index] = value;
-  console.log("fake cells is ", cells);
   // check if that play results in a win
   if ((cells[0] === cells[1] && cells[0] === cells[2] && cells[0] !== '') ||
       (cells[3] === cells[4] && cells[3] === cells[5] && cells[3] !== '') ||
@@ -41,18 +40,15 @@ const isOver = function (index, value) {
     ) {
       return true;
     } else {
-      console.log("i'm in the false block!");
       return false;
     }
 };
 
 // Processes a single game turn from either player
 const processTurn = function (index) {
-  console.log("you are in processTurn");
 
   // is it a legal move?
   if (isLegalMove(index) === false) {
-      console.log("not a legal move");
       return;
   }
 
@@ -65,13 +61,12 @@ const processTurn = function (index) {
     value = 'o';
   }
   isPlayerXTurn = !isPlayerXTurn;
+  console.log("in processTurn, isPlayerXTurn is ", isPlayerXTurn);
 
   // now decide whether it's a win or not
-
   let over = isOver(index, value);
-  console.log("over is ", over);
 
-  // now we can call updateGame
+  // return the key info about this turn
   return [index, value, over];
 };
 
