@@ -17,6 +17,8 @@ const signInSuccess = (data) => {
   // hide the login forms and reveal the game board
   $('#auth-forms-box').hide();
   $('#game-board').show();
+  $('#sign-out').show();
+  $('#create-game').show();
 
   // console checks
   console.log("Signed in successfully");

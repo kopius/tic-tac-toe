@@ -8,4 +8,6 @@ $(() => {
   authEvents.addHandlers();
   gameEvents.addHandlers();
   $('#game-board').hide();
+  $('#sign-out').hide();
+  $('#create-game').hide();
 });

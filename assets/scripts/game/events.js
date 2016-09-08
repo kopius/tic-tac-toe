@@ -23,8 +23,7 @@ const onClickCell = function (event) {
 };
 
 const addHandlers = function () {
-  console.log("You are in addHandlers");
-  $('#create-game').on('submit', onCreateGame);
+  $('#create-game').on('click', onCreateGame);
   $('#cell1').on('click', {index: 0}, onClickCell);
   $('#cell2').on('click', {index: 1}, onClickCell);
   $('#cell3').on('click', {index: 2}, onClickCell);
