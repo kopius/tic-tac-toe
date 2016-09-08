@@ -6,7 +6,8 @@ body {
 }
 
 .game-board-box {
-  border: 1px solid $black;
+  background: $box-background;
+  border-radius: 4px;
   box-sizing: border-box;
   height: $box-height;
   margin: 20px;
@@ -24,18 +25,18 @@ body {
     width: 300px;
   }
 
-  #cell5 {
+  .cell5 {
     border: $cell-border;
   }
 
-  #cell2,
-  #cell8 {
+  .cell2,
+  .cell8 {
     border-left: $cell-border;
     border-right: $cell-border;
   }
 
-  #cell4,
-  #cell6 {
+  .cell4,
+  .cell6 {
     border-bottom: $cell-border;
     border-top: $cell-border;
   }
@@ -67,7 +68,8 @@ input {
 }
 
 .info-bar {
-  border: 1px solid $black;
+  background: $box-background;
+  border-radius: 4px;
   box-sizing: border-box;
   height: $box-height;
   margin: 20px;

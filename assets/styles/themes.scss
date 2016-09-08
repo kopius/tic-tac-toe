@@ -15,9 +15,20 @@ input {
   background: $background;
 }
 
-nav {
-  background: $background;
+.navbar {
+  background: $box-background;
   color: $font-color;
+
+  button {
+    background: $font-color;
+    color: $background;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.game-board-col {
+  font-family: $game-font;
 }
 
 // .container-fluid: {
