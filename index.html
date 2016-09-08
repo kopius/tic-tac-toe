@@ -29,8 +29,10 @@
         </div><!-- /.container-fluid -->
       </nav>
 
-      <!-- THIS SECTION CONTAINS THE GAME BOARD -->
+      
       <section class='col-xs-6 game-board-box'>
+
+        <!-- THIS DIV CONTAINS THE AUTHENTICATION FORMS -->
         <div class='auth-box' id='auth-box'>
           <form id="sign-up" class='auth-box-form'>
             <fieldset>
@@ -44,7 +46,6 @@
               <input type="submit" name="submit" value="Sign up">
             </fieldset>
           </form>
-          <hr>
           <form id="sign-in" class='auth-box-form'>
             <fieldset>
                 <legend>Already have an account? Sign in to play!</legend>
@@ -56,6 +57,8 @@
               </fieldset>
           </form>
         </div>
+
+        <!-- THIS DIV CONTAINS THE GAME BOARD -->
         <div class='game-board' id="game-board">
           <div class="row game-board-row">
             <div id="cell1" class="col-xs-4 game-board-col">[empty]</div>
@@ -78,9 +81,7 @@
 
       <!-- USER AUTHENTICATION FORMS -->
       <!-- these are temporarily shoved aside in a section while the game board & logic are being developed -->
-      <section class='sidebar col-xs-4'>
-
-        <hr>
+      <section class='info-bar col-xs-4'>
         <form id="change-password">
           <fieldset>
             <legend>Change Password</legend>

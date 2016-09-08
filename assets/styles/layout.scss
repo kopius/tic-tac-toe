@@ -1,3 +1,4 @@
+$box-height: 400px;
 
 body {
   margin: 50px 0;
@@ -6,7 +7,7 @@ body {
 .game-board-box {
   border: 1px solid $black;
   box-sizing: border-box;
-  height: 500px;
+  height: $box-height;
   margin: 20px;
 
   .game-board {
@@ -33,8 +34,8 @@ body {
 }
 
 .auth-box {
-  height: 90%;
-  margin: 5% 0;
+  height: 100%;
+  // margin: 5% 0;
   width: 100%;
 }
 
@@ -48,9 +49,10 @@ input {
   margin: 3px 0;
 }
 
-.sidebar {
+.info-bar {
   border: 1px solid $black;
   box-sizing: border-box;
+  height: $box-height;
   margin: 20px;
   padding: 5px;
 
