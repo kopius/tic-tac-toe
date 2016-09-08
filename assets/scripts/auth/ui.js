@@ -14,7 +14,7 @@ const signInSuccess = (data) => {
   // store new user in app.user
   app.user = data.user;
 
-  // hide the login forms and reveal the game board
+  // GAME VIEW - hide the login forms and reveal the game board
   $('#auth-forms-box').hide();
   $('#game-board').show();
   $('#sign-out').show();
@@ -29,7 +29,7 @@ const signOutSuccess = () => {
   // clear the user object
   app.user = null;
 
-  // hide the game board and display the login forms
+  // AUTH VIEW - hide the game board and display the login forms
   $('#game-board').hide();
   $('#auth-forms-box').show();
 

@@ -2,10 +2,7 @@
 
 const api = require('./api');
 const ui = require('./ui');
-const app = require('../app.js');
 const logic = require('./logic');
-
-// const getFormFields = require('../../../lib/get-form-fields');
 
 const onCreateGame = function (event) {
   event.preventDefault();
