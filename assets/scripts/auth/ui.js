@@ -11,6 +11,7 @@ const signInSuccess = (data) => {
   app.user = data.user;
   console.log("Signed in successfully");
   console.log("app.user is ", app.user);
+  $('#game-board').show();
 };
 
 const signOutSuccess = () => {
