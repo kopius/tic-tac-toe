@@ -1,4 +1,5 @@
 $box-height: 400px;
+$cell-border: 4px solid $dark-brown;
 
 body {
   margin: 50px 0;
@@ -12,7 +13,7 @@ body {
 
   .game-board {
     margin: 50px auto;
-    width: 50%;
+    width: 100%;
   }
 
   .row {
@@ -23,8 +24,24 @@ body {
     width: 300px;
   }
 
+  #cell5 {
+    border: $cell-border;
+  }
+
+  #cell2,
+  #cell8 {
+    border-left: $cell-border;
+    border-right: $cell-border;
+  }
+
+  #cell4,
+  #cell6 {
+    border-bottom: $cell-border;
+    border-top: $cell-border;
+  }
+
   .game-board-col {
-    border: 1px solid $black;
+    // border: 1px solid $black;
     box-sizing: border-box;
     height: 100px;
     padding-top: 40px;
