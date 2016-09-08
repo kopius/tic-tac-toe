@@ -36,14 +36,20 @@ const isOver = function (index, value) {
   cells[index] = value;
   console.log("fake cells is ", cells);
   // check if that play results in a win
-  if (cells[0] === cells[1] && cells[0] === cells[2]) {
-    console.log("i'm in the true block!");
-    return true;
-  } else {
-    console.log("i'm in the false block!");
-    return false;
-  }
-
+  if ((cells[0] === cells[1] && cells[0] === cells[2] && cells[0] !== '') ||
+      (cells[3] === cells[4] && cells[3] === cells[5] && cells[3] !== '') ||
+      (cells[6] === cells[7] && cells[6] === cells[8] && cells[6] !== '') ||
+      (cells[0] === cells[3] && cells[0] === cells[6] && cells[0] !== '') ||
+      (cells[1] === cells[4] && cells[1] === cells[7] && cells[1] !== '') ||
+      (cells[2] === cells[5] && cells[2] === cells[8] && cells[2] !== '') ||
+      (cells[0] === cells[4] && cells[0] === cells[8] && cells[0] !== '') ||
+      (cells[2] === cells[4] && cells[2] === cells[6] && cells[2] !== '')
+    ) {
+      return true;
+    } else {
+      console.log("i'm in the false block!");
+      return false;
+    }
 };
 
 // Processes a single game turn from either player
