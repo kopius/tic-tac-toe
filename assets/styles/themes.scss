@@ -1,0 +1,25 @@
+// Add themes
+
+body {
+  background: $background;
+  color: $font-color;
+}
+
+legend,
+form,
+button {
+  color: $font-color;
+}
+
+input {
+  background: $background;
+}
+
+nav {
+  background: $background;
+  color: $font-color;
+}
+
+// .container-fluid: {
+//   background: $background;
+// }
