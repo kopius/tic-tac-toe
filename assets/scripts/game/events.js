@@ -12,11 +12,18 @@ const onCreateGame = function (event) {
     .fail(ui.createGameFailure);
 };
 
+const updateGame = function (index, value, done) {
+  api.patchGame(index, value, done)
+    .done(ui.updateGameSuccess)
+    .fail(ui.updateGameSuccess);
+};
+
 const onClickCell = function (event) {
   event.preventDefault();
   let index = event.data.index;
 
-  logic.processTurn(index);
+  let turnResult = logic.processTurn(index);
+  updateGame(turnResult[0], turnResult[1], turnResult[2]);
 };
 
 const addHandlers = function () {

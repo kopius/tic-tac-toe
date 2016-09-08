@@ -1,17 +1,11 @@
 'use strict';
 
-const api = require('./api');
 const app = require('../app.js');
-const ui = require('./ui');
 
 let isPlayerXTurn = true;
 
 // Calls the patchGame function in api.js to update the current game object
-const updateGame = function (index, value, done) {
-  api.patchGame(index, value, done)
-    .done(ui.updateGameSuccess)
-    .fail(ui.updateGameSuccess);
-};
+
 
 // Determines whether an attempted move is legal
 const isLegalMove = function (index) {
@@ -78,9 +72,10 @@ const processTurn = function (index) {
   console.log("over is ", over);
 
   // now we can call updateGame
-  updateGame(index, value, over);
+  return [index, value, over];
 };
 
 module.exports = {
+  isPlayerXTurn,
   processTurn,
 };
