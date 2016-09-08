@@ -31,21 +31,21 @@
 
       <!-- THIS SECTION CONTAINS THE GAME BOARD -->
       <section class='col-xs-6 game-board-box'>
-        <div class='auth-forms-box' id='auth-forms-box'>
-          <form id="sign-up" class=''>
+        <div class='auth-box' id='auth-box'>
+          <form id="sign-up" class='auth-box-form'>
             <fieldset>
               <legend>Sign up for free and play unlimited Tic Tac Toe!</legend>
               <input type="email" name="credentials[email]" placeholder="Enter your email">
               <br>
               <input type="password" name="credentials[password]" placeholder="Create a password">
               <br>
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
               <br>
               <input type="submit" name="submit" value="Sign up">
             </fieldset>
           </form>
           <hr>
-          <form id="sign-in">
+          <form id="sign-in" class='auth-box-form'>
             <fieldset>
                 <legend>Already have an account? Sign in to play!</legend>
                 <input type="email" name="credentials[email]" placeholder="Enter your email">

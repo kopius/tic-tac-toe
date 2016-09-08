@@ -15,7 +15,7 @@ const signInSuccess = (data) => {
   app.user = data.user;
 
   // GAME VIEW - hide the login forms and reveal the game board
-  $('#auth-forms-box').hide();
+  $('#auth-box').hide();
   $('#game-board').show();
   $('#sign-out').show();
   $('#create-game').show();
@@ -31,7 +31,7 @@ const signOutSuccess = () => {
 
   // AUTH VIEW - hide the game board and display the login forms
   $('#game-board').hide();
-  $('#auth-forms-box').show();
+  $('#auth-box').show();
 
   // display success message in the UI
 

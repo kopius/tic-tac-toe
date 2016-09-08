@@ -32,6 +32,22 @@ body {
   }
 }
 
+.auth-box {
+  height: 90%;
+  margin: 5% 0;
+  width: 100%;
+}
+
+.auth-box-form {
+  height: 40%;
+  margin: 5% 0;
+  width: 100%;
+}
+
+input {
+  margin: 3px 0;
+}
+
 .sidebar {
   border: 1px solid $black;
   box-sizing: border-box;
