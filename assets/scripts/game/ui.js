@@ -16,7 +16,12 @@ const createGameSuccess = function (data) {
   console.log("Game created successfully");
   console.log('app.user.game is ', app.user.game);
 
+  // clear last game's win message
   $('#info-bar').text('');
+
+  // clear the board
+  let emptyCells = ['', '', '', '', '', '', '', '', ''];
+  emptyCells.forEach(paintBoard);
 };
 
 const createGameFailure = function (error) {
@@ -25,24 +30,20 @@ const createGameFailure = function (error) {
 };
 
 const updateGameSuccess = function (data) {
+  // update the game object in app.js
   app.user.game = data.game;
   let game = app.user.game;
-  console.log("app.user.game is ", app.user.game);
 
   // add code that updates the UI for realsies
   let cells = game.cells;
   cells.forEach(paintBoard);
 
-  // let player = 'X';
-  // console.log("in updateGameSuccess, isPlayerXTurn is ", logic.isPlayerXTurn);
-  // if (logic.isPlayerXTurn) {
-  //   player = 'O';
-  // }
-
+  // if the game is over, display a win message
   if (game.over) {
     $('#info-bar').text('PLAYER ' + player + ' WINS!');
   }
 
+  // change whose turn it is
   if (player === 'X') {
     player = 'O';
   } else {
@@ -52,7 +53,6 @@ const updateGameSuccess = function (data) {
 
 const updateGameFailure = function (error) {
   console.log(error);
-  console.log("app.user.game is ", app.user.game);
 };
 
 module.exports = {
