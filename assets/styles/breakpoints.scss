@@ -1,0 +1,22 @@
+@import 'breakpoint';
+
+body {
+  @include breakpoint(tiny) {
+    max-width: 100%;
+  }
+
+  // 768px < small < 991px
+  @include breakpoint(small) {
+    max-width: 758px;
+  }
+
+  // 992px < medium < 1200px
+  @include breakpoint(medium) {
+    max-width: 982px;
+  }
+
+  // 1200px < large
+  @include breakpoint(large) {
+    max-width: 1190px;
+  }
+}
