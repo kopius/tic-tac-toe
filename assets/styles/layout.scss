@@ -4,8 +4,6 @@ body {
 }
 
 .game-board-box {
-  // float: left;
-  // width: 60%;
   border: 1px solid $black;
   box-sizing: border-box;
   height: 500px;
@@ -37,7 +35,6 @@ body {
 .sidebar {
   border: 1px solid $black;
   box-sizing: border-box;
-  // float: right;
   margin: 20px;
   padding: 5px;
 
@@ -50,7 +47,7 @@ body {
   }
 }
 
-#new-game {
+.new-game {
   margin: 10px auto;
   width: 60px;
 }

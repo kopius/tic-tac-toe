@@ -9,8 +9,30 @@
 
       <!-- THIS SECTION CONTAINS THE GAME BOARD -->
       <section class='col-xs-6 game-board-box'>
-        <div class='auth-forms-box'>
-
+        <div class='auth-forms-box' id='auth-forms-box'>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign up</legend>
+              <input type="email" name="credentials[email]" placeholder="Enter your email">
+              <br>
+              <input type="password" name="credentials[password]" placeholder="Create a password">
+              <br>
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
+              <br>
+              <input type="submit" name="submit" value="Sign up">
+            </fieldset>
+          </form>
+          <hr>
+          <form id="sign-in">
+            <fieldset>
+                <legend>Sign in</legend>
+                <input type="email" name="credentials[email]" placeholder="Enter your email">
+                <br>
+                <input type="password" name="credentials[password]" placeholder="Enter your password">
+                <br>
+                <input type="submit" name="submit" value="Sign in">
+              </fieldset>
+          </form>
         </div>
         <div class='game-board' id="game-board">
           <div class="row game-board-row">
@@ -28,38 +50,16 @@
             <div id="cell8" class="col-xs-4 game-board-col">[empty]</div>
             <div id="cell9" class="col-xs-4 game-board-col">[empty]</div>
           </div>
+          <form id="create-game" class="new-game">
+            <input type="submit" name="submit" value="New Game">
+          </form>
         </div>
-        <form id="create-game">
-          <input type="submit" name="submit" value="New Game">
-        </form>
       </section>
 
       <!-- USER AUTHENTICATION FORMS -->
       <!-- these are temporarily shoved aside in a section while the game board & logic are being developed -->
       <section class='sidebar col-xs-4'>
-        <form id="sign-up">
-          <fieldset>
-            <legend>Sign up</legend>
-            <input type="email" name="credentials[email]" placeholder="Enter your email">
-            <br>
-            <input type="password" name="credentials[password]" placeholder="Create a password">
-            <br>
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm your password">
-            <br>
-            <input type="submit" name="submit" value="Sign up">
-          </fieldset>
-        </form>
-        <hr>
-        <form id="sign-in">
-          <fieldset>
-              <legend>Sign in</legend>
-              <input type="email" name="credentials[email]" placeholder="Enter your email">
-              <br>
-              <input type="password" name="credentials[password]" placeholder="Enter your password">
-              <br>
-              <input type="submit" name="submit" value="Sign in">
-            </fieldset>
-        </form>
+
         <hr>
         <form id="change-password">
           <fieldset>
