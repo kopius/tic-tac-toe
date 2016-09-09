@@ -45,6 +45,8 @@
           </form>
         </div>
 
+
+
         <!-- THIS DIV CONTAINS THE GAME BOARD -->
         <div class='game-board' id="game-board">
           <div class="row game-board-row">
@@ -66,21 +68,25 @@
         </div>
       </section>
 
-      <!-- USER AUTHENTICATION FORMS -->
-      <!-- these are temporarily shoved aside in a section while the game board & logic are being developed -->
+      <!-- INFO BAR -->
       <section id="info-bar" class='info-bar col-xs-4'>
 
+        <div class="change-pw-box" id="change-pw-box">
+          <form id="change-password" class='change-password'>
+            <fieldset>
+              <legend>kind of paranoid aren't you</legend>
+              <input type="password" name="passwords[old]" placeholder="Enter current password">
+              <br>
+              <input type="password" name="passwords[new]" placeholder="Choose new password">
+              <br>
+              <input type="submit" name="submit" value="Change Password">
+            </fieldset>
+          </form>
+        </div>
 
-        <form id="change-password">
-          <fieldset>
-            <legend>Change Password</legend>
-            <input type="password" name="passwords[old]" placeholder="Enter current password">
-            <br>
-            <input type="password" name="passwords[new]" placeholder="Choose new password">
-            <br>
-            <input type="submit" name="submit" value="Change Password">
-          </fieldset>
-        </form>
+
+
+
 
       </section>
     </body>

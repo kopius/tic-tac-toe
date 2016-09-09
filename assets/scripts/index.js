@@ -13,4 +13,5 @@ $(() => {
   $('#game-board').hide();
   $('#sign-out').hide();
   $('#create-game').hide();
+  $('#change-pw-box').hide();
 });
