@@ -10,19 +10,13 @@ nav {
   position: relative;
 }
 
-.child {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .navbar-header {
   display: inline-block;
   font-family: $body-font;
   font-size: 2em;
-  text-align: center;
-  position: absolute;
   left: 10px;
+  position: absolute;
+  text-align: center;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -112,6 +106,21 @@ input {
 
   input {
     margin: 2px;
+  }
+}
+
+.game-status {
+  height: 96%;
+  margin: 2%;
+  text-align: center;
+  width: 96%;
+
+  p {
+    font-size: 2.5em;
+  }
+
+  .play-again {
+    font-size: 1em;
   }
 }
 
