@@ -2,36 +2,49 @@
 
 const app = require('../app');
 
-let player = 'X';
-
 const paintBoard = function (element, index) {
   let id = index + 1;
   let cellId = '#cell' + id;
   $(cellId).text(element);
 };
 
+const displayWhoseTurn = function () {
+  $('#active-player').text("player " + app.activePlayer + '\'s');
+};
+
+const changeWhoseTurn = function () {
+  if (app.activePlayer === 'x') {
+    app.activePlayer = 'o';
+  } else {
+    app.activePlayer = 'x';
+  }
+};
+
+const displayWarning = function (warning) {
+  $('#misc-message').text(warning);
+};
+
 const createGameSuccess = function (data) {
   app.user.game = data.game;
 
-  // create an activePlayer property on app here and initialize to 'x'
+  // create an activePlayer property on app and initialize to 'x'
+  app.activePlayer = 'x';
 
   console.log("Game created successfully");
-  console.log('app.user.game is ', app.user.game);
+  console.log('app ', app);
 
-  // clear last game's win message
+  // reset the game view
   $('#win-message').hide();
-
-  // clear the board
   let emptyCells = ['', '', '', '', '', '', '', '', ''];
   emptyCells.forEach(paintBoard);
+  $('#whose-turn').show();
 
   // display whose turn it is
-  $('#whose-turn').show();
+  displayWhoseTurn();
 };
 
-const createGameFailure = function (error) {
-  console.log("Failed to create game");
-  console.log(error);
+const createGameFailure = function () {
+  $('#misc-message').text("failed to create game");
 };
 
 const updateGameSuccess = function (data) {
@@ -39,28 +52,24 @@ const updateGameSuccess = function (data) {
   app.user.game = data.game;
   let game = app.user.game;
 
-  // add code that updates the UI for realsies
+  // update the UI
   let cells = game.cells;
   cells.forEach(paintBoard);
+  displayWarning('');
 
   // if the game is over, display a win message
   if (game.over) {
     $('#whose-turn').hide();
     $('#win-message').show();
-    $('#winning-player').text("somebody won i guess");
+    $('#winning-player').text("player " + app.activePlayer);
     return;
   }
 
   // change the active player
-  // CHANGE THIS TO REFERENCE activePlayer PROPERTY ON APP
-  if (player === 'X') {
-    player = 'O';
-  } else {
-    player = 'X';
-  }
+  changeWhoseTurn();
 
-  // display whose turn it is
-  $('#active-player').text(app.activePlayer + '\'s');
+  // display whose turn it is now
+  displayWhoseTurn();
 };
 
 const updateGameFailure = function (error) {
@@ -68,6 +77,7 @@ const updateGameFailure = function (error) {
 };
 
 module.exports = {
+  displayWarning,
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,

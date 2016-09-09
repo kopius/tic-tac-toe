@@ -1,11 +1,7 @@
 'use strict';
 
 const app = require('../app.js');
-
-let isPlayerXTurn = true;
-
-// Calls the patchGame function in api.js to update the current game object
-
+const ui = require('./ui.js');
 
 // Determines whether an attempted move is legal
 const isLegalMove = function (index) {
@@ -49,19 +45,15 @@ const processTurn = function (index) {
 
   // is it a legal move?
   if (isLegalMove(index) === false) {
+      ui.displayWarning("invalid move");
       return;
   }
 
   // if we get here, it's a legal move
 
   // decide whether to put an 'x' or an 'o' in the cell
-  // this could potentially be broken out in a separate function
-  let value = 'x';
-  if (isPlayerXTurn === false) {
-    value = 'o';
-  }
-  isPlayerXTurn = !isPlayerXTurn;
-  console.log("in processTurn, isPlayerXTurn is ", isPlayerXTurn);
+  let value = app.activePlayer;
+  console.log("in processTurn, value is ", value);
 
   // now decide whether it's a win or not
   let over = isOver(index, value);
@@ -71,6 +63,5 @@ const processTurn = function (index) {
 };
 
 module.exports = {
-  isPlayerXTurn,
   processTurn,
 };
