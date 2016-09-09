@@ -32,6 +32,7 @@ const signOutSuccess = () => {
   // AUTH VIEW - hide the game board and display the login forms
   $('#game-board').hide();
   $('#auth-box').show();
+  $('#game-status').hide();
 
   // display success message in the UI
 

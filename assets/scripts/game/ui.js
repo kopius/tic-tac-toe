@@ -38,6 +38,7 @@ const createGameSuccess = function (data) {
   let emptyCells = ['', '', '', '', '', '', '', '', ''];
   emptyCells.forEach(paintBoard);
   $('#whose-turn').show();
+  $('#game-status').show();
 
   // display whose turn it is
   displayWhoseTurn();

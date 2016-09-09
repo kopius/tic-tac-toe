@@ -9,7 +9,8 @@ $(() => {
   authEvents.addHandlers();
   gameEvents.addHandlers();
 
-  // hide buttons that should not show until login
+  // hide elements that should not show at load
+  $('#game-status').hide();
   $('#game-board').hide();
   $('#sign-out').hide();
   $('#create-game').hide();
