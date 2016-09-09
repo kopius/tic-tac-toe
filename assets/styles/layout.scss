@@ -18,11 +18,9 @@ nav {
 
 .navbar-header {
   display: inline-block;
-  // float: left;
   font-family: $body-font;
   font-size: 2em;
   text-align: center;
-  // margin: auto 5px;
   position: absolute;
   left: 10px;
   top: 50%;
@@ -30,7 +28,6 @@ nav {
 }
 
 .navbar-buttons {
-  // clear: both;
   display: inline-block;
   position: absolute;
   right: 0%;

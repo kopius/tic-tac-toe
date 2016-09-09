@@ -22,13 +22,31 @@ body {
   }
 }
 
+nav {
+  @include breakpoint(tiny) {
+    height: 8em;
+  }
+}
+
 .navbar-header {
   @include breakpoint(tiny) {
     // display: block;
     left: auto;
-    // margin: 0 auto;
+    top: 10%;
     width: 100%;
+    transform: none;
   }
+}
+//
+.navbar-buttons {
+  @include breakpoint(tiny) {
+    bottom: 10%;
+    right: auto;
+    width: 100%;
+    text-align: center;
+    transform: none;
+  }
+
 }
 
 .game-board-box {
