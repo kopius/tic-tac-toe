@@ -26,3 +26,17 @@ body {
     float: right;
   }
 }
+
+.game-board-box {
+  @include breakpoint(tiny) {
+    margin: 20px 10%;
+    width: 80%;
+  }
+}
+
+.info-bar {
+  @include breakpoint(tiny) {
+    margin: 20px 10%;
+    width: 80%;
+  }
+}

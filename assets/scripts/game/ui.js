@@ -1,7 +1,6 @@
 'use strict';
 
 const app = require('../app');
-const logic = require('./logic');
 
 let player = 'X';
 
