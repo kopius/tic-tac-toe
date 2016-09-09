@@ -12,15 +12,21 @@ const paintBoard = function (element, index) {
 
 const createGameSuccess = function (data) {
   app.user.game = data.game;
+
+  // create an activePlayer property on app here and initialize to 'x'
+
   console.log("Game created successfully");
   console.log('app.user.game is ', app.user.game);
 
   // clear last game's win message
-  $('#info-bar').text('');
+  $('#win-message').hide();
 
   // clear the board
   let emptyCells = ['', '', '', '', '', '', '', '', ''];
   emptyCells.forEach(paintBoard);
+
+  // display whose turn it is
+  $('#whose-turn').show();
 };
 
 const createGameFailure = function (error) {
@@ -39,15 +45,22 @@ const updateGameSuccess = function (data) {
 
   // if the game is over, display a win message
   if (game.over) {
-    $('#info-bar').text('PLAYER ' + player + ' WINS!');
+    $('#whose-turn').hide();
+    $('#win-message').show();
+    $('#winning-player').text("somebody won i guess");
+    return;
   }
 
-  // change whose turn it is
+  // change the active player
+  // CHANGE THIS TO REFERENCE activePlayer PROPERTY ON APP
   if (player === 'X') {
     player = 'O';
   } else {
     player = 'X';
   }
+
+  // display whose turn it is
+  $('#active-player').text(app.activePlayer + '\'s');
 };
 
 const updateGameFailure = function (error) {
