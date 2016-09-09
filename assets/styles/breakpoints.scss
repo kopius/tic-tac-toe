@@ -20,3 +20,9 @@ body {
     max-width: 1190px;
   }
 }
+
+.navbar-btn {
+  @include breakpoint(tiny) {
+    float: right;
+  }
+}

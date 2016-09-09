@@ -5,6 +5,17 @@ body {
   margin: 50px 0;
 }
 
+.navbar-header {
+  display: inline-block;
+  float: left;
+}
+
+.navbar-buttons {
+  clear: left;
+  display: inline-block;
+  float: right;
+}
+
 .game-board-box {
   background: $box-background;
   border-radius: 4px;
