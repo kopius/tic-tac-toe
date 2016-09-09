@@ -33,6 +33,7 @@ const signOutSuccess = () => {
   $('#game-board').hide();
   $('#auth-box').show();
   $('#game-status').hide();
+  $('#misc-message').text('');
 
   // display success message in the UI
 

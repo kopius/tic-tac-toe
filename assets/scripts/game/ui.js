@@ -34,6 +34,7 @@ const createGameSuccess = function (data) {
   console.log('app ', app);
 
   // reset the game view
+  $('#misc-message').text('');
   $('#win-message').hide();
   let emptyCells = ['', '', '', '', '', '', '', '', ''];
   emptyCells.forEach(paintBoard);
