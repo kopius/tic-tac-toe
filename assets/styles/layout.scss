@@ -1,34 +1,6 @@
 $box-height: 400px;
 $cell-border: 4px solid $dark-brown;
 
-body {
-
-}
-
-nav {
-  height: 5em;
-  position: relative;
-}
-
-.navbar-header {
-  display: inline-block;
-  font-family: $body-font;
-  font-size: 2em;
-  left: 10px;
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.navbar-buttons {
-  display: inline-block;
-  position: absolute;
-  right: 0%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .game-board-box {
   background: $box-background;
   border-radius: 4px;

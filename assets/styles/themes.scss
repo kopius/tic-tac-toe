@@ -7,27 +7,48 @@ body {
   margin: 50px 0;
 }
 
+// stylings related to the navigation bar
+nav {
+  background: $box-background;
+  color: $font-color;
+  height: 5em;
+  position: relative;
+  width: 100%;
+}
+
+.navbar-header {
+  display: inline-block;
+  font-family: $body-font;
+  font-size: 2em;
+  left: 10px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-buttons {
+  display: inline-block;
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar-btn {
+  background: $font-color;
+  color: $background;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 legend,
-form,
-button {
+form {
   color: $font-color;
 }
 
 input {
   background: $background;
-}
-
-.navbar {
-  background: $box-background;
-  color: $font-color;
-  width: 100%;
-
-  button {
-    background: $font-color;
-    color: $background;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 }
 
 .game-board-col {
