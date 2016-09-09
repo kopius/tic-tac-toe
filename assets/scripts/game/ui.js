@@ -63,7 +63,7 @@ const updateGameSuccess = function (data) {
   if (game.over) {
     $('#whose-turn').hide();
     $('#win-message').show();
-    $('#winning-player').text("player " + app.activePlayer);
+    $('#winning-player').text(app.winner);
     return;
   }
 

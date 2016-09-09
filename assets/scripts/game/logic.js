@@ -8,22 +8,29 @@ const isLegalMove = function (index) {
   let game = app.user.game;
 
   if(game.over === true) {
-    console.log("the game is over");
+    ui.displayWarning("invalid move - the game is over");
     return false;
   } else if (game.cells[index] !== '') {
-    console.log("that cell is already taken");
+    ui.displayWarning("invalid move - that square is taken");
     return false;
   }
   return true;
 };
 
+const isTieGame = function (cells) {
+  if (cells.indexOf('') === -1){
+      return true;
+  }
+};
+
 const isOver = function (index, value) {
-  // create a copy of the cells array so we can check for a win
-  // without altering the actual array - only a server response should do that
+  // create a copy of the cells array so we can check for a win without altering
+  // the actual cells array on app, since only a server response should do that
   let cells = app.user.game.cells.slice();
 
-  // apply the most recent play to our copy
+  // apply the most recent play to our copied array
   cells[index] = value;
+
   // check if that play results in a win
   if ((cells[0] === cells[1] && cells[0] === cells[2] && cells[0] !== '') ||
       (cells[3] === cells[4] && cells[3] === cells[5] && cells[3] !== '') ||
@@ -34,6 +41,12 @@ const isOver = function (index, value) {
       (cells[0] === cells[4] && cells[0] === cells[8] && cells[0] !== '') ||
       (cells[2] === cells[4] && cells[2] === cells[6] && cells[2] !== '')
     ) {
+      // if it's a win, store the winning player in app
+      app.winner = 'player ' + app.activePlayer;
+      return true;
+    } else if (isTieGame(cells)) {
+      // if it's a tie, the winner is nobody
+      app.winner = 'nobody';
       return true;
     } else {
       return false;
@@ -45,7 +58,6 @@ const processTurn = function (index) {
 
   // is it a legal move?
   if (isLegalMove(index) === false) {
-      ui.displayWarning("invalid move");
       return;
   }
 
@@ -53,10 +65,10 @@ const processTurn = function (index) {
 
   // decide whether to put an 'x' or an 'o' in the cell
   let value = app.activePlayer;
-  console.log("in processTurn, value is ", value);
 
   // now decide whether it's a win or not
   let over = isOver(index, value);
+  console.log("app.winner is ", app.winner);
 
   // return the key info about this turn
   return [index, value, over];
