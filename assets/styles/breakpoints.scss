@@ -1,29 +1,33 @@
 @import 'breakpoint';
 
 body {
+  // tiny <= 767px
   @include breakpoint(tiny) {
     max-width: 100%;
   }
 
-  // 768px < small < 991px
+  // 767px < small < 992x
   @include breakpoint(small) {
     max-width: 758px;
   }
 
-  // 992px < medium < 1200px
+  // 991px < medium < 1200px
   @include breakpoint(medium) {
     max-width: 982px;
   }
 
-  // 1200px < large
+  // 1200px <= large
   @include breakpoint(large) {
     max-width: 1190px;
   }
 }
 
-.navbar-btn {
+.navbar-header {
   @include breakpoint(tiny) {
-    float: right;
+    // display: block;
+    left: auto;
+    // margin: 0 auto;
+    width: 100%;
   }
 }
 

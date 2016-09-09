@@ -20,6 +20,10 @@ Document your planning and tell a story about your development process and probl
 
 -link to planning docs
 -tell story
+-talk about how i started by communicating with the API, instead of leaving that
+until the end. this informed how I wrote the game logic, ensuring that my front
+end handled game state in a way that made it easy to patch game updates to the
+server.
 
 List unsolved problems which would be fixed in future iterations.
 

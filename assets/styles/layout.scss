@@ -5,15 +5,37 @@ body {
   margin: 50px 0;
 }
 
+nav {
+  height: 5em;
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .navbar-header {
   display: inline-block;
-  float: left;
+  // float: left;
+  font-family: $body-font;
+  font-size: 2em;
+  text-align: center;
+  // margin: auto 5px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .navbar-buttons {
-  clear: left;
+  // clear: both;
   display: inline-block;
-  float: right;
+  position: absolute;
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .game-board-box {
@@ -58,6 +80,7 @@ body {
     height: 100px;
     padding-top: 40px;
     text-align: center;
+    vertical-align: middle;
     width: 100px;
   }
 }
