@@ -19,6 +19,7 @@ const signInSuccess = (data) => {
   $('#game-board').show();
   $('#sign-out').show();
   $('#create-game').show();
+  $('#show-profile').show();
 
   // console checks
   console.log("Signed in successfully");
@@ -37,29 +38,33 @@ const signOutSuccess = () => {
 
   // display success message in the UI
 
-  // console checks
-  console.log("Signed out successfully");
-  console.log("app.user is ", app.user);
+};
+
+const showProfile = function(data) {
+  app.user.games = data.games;
+  let games = app.user.games;
+
+  // show user profile data
+  let numGames = games.length;
+  
+  // show change-password form
+  $('#change-pw-box').hide();
+
 };
 
 const changePasswordSuccess = () => {
-  // display success message in the UI
-
-  // console checks
-  console.log("Password changed successfully");
+  $('#misc-message').text('password changed. kind of paranoid, aren\'t you?');
 };
 
-const failure = (error) => {
-
-  // console checks
-  console.log("FAILURE");
-  console.error(error);
+const failure = () => {
+  $('#misc-message').text('uh-oh something went wrong');
 };
 
 module.exports = {
   signUpSuccess,
   signInSuccess,
   signOutSuccess,
+  showProfile,
   changePasswordSuccess,
   failure,
 };

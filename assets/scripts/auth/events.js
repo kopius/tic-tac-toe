@@ -31,6 +31,14 @@ const onSignOut = function (event) {
     .fail(ui.failure);
 };
 
+const onShowProfile = function (event) {
+  event.preventDefault();
+
+  api.indexGames()
+    .done(ui.showProfile)
+    .fail(ui.failure);
+};
+
 const onChangePassword = function (event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -44,6 +52,7 @@ const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('click', onSignOut);
+  $('#show-profile').on('click', onShowProfile);
   $('#change-password').on('submit', onChangePassword);
 };
 
