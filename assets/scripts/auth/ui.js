@@ -20,6 +20,7 @@ const signInSuccess = (data) => {
   $('#sign-out').show();
   $('#create-game').show();
   $('#show-profile').show();
+  $('#profile-box').hide();
 
   // console checks
   console.log("Signed in successfully");
@@ -35,6 +36,7 @@ const signOutSuccess = () => {
   $('#auth-box').show();
   $('#game-status').hide();
   $('#misc-message').text('');
+  $('#profile-box').hide();
 
   // display success message in the UI
 
@@ -44,11 +46,17 @@ const showProfile = function(data) {
   app.user.games = data.games;
   let games = app.user.games;
 
-  // show user profile data
+  // update the number of games shown in profile
   let numGames = games.length;
-  
+  $('#num-games').text(numGames);
+
+  // show user profile
+  $('#profile-box').show();
+
+
+
   // show change-password form
-  $('#change-pw-box').hide();
+  // $('#change-pw-box').show();
 
 };
 

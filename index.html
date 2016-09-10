@@ -70,18 +70,22 @@
 
       <!-- INFO BAR -->
       <section id="info-bar" class='info-bar col-xs-4'>
-
-        <div class="change-pw-box" id="change-pw-box">
-          <form id="change-password" class='change-password'>
-            <fieldset>
-              <legend>kind of paranoid aren't you</legend>
-              <input type="password" name="passwords[old]" placeholder="Enter current password">
-              <br>
-              <input type="password" name="passwords[new]" placeholder="Choose new password">
-              <br>
-              <input type="submit" name="submit" value="Change Password">
-            </fieldset>
-          </form>
+        <div class="profile-box" id="profile-box">
+          <div class="user-info" id="user-info">
+            <p>you have played <span id="num-games"></span> games.</p>
+          </div>
+          <div class="change-pw-box" id="change-pw-box">
+            <form id="change-password" class='change-password'>
+              <fieldset>
+                <legend>you can change your password</legend>
+                <input type="password" name="passwords[old]" placeholder="Enter current password">
+                <br>
+                <input type="password" name="passwords[new]" placeholder="Choose new password">
+                <br>
+                <input type="submit" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+          </div>
         </div>
 
         <div class="game-status" id="game-status">

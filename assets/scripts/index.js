@@ -15,5 +15,5 @@ $(() => {
   $('#sign-out').hide();
   $('#create-game').hide();
   $('#show-profile').hide();
-  $('#change-pw-box').hide();
+  $('#profile-box').hide();
 });
