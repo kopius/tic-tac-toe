@@ -21,10 +21,6 @@ const signInSuccess = (data) => {
   $('#create-game').show();
   $('#show-profile').show();
   $('#profile-box').hide();
-
-  // console checks
-  console.log("Signed in successfully");
-  console.log("app.user is ", app.user);
 };
 
 const signOutSuccess = () => {

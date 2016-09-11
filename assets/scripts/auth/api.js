@@ -13,7 +13,7 @@ const signUp = (data) => {
 const signIn = (data) => {
   // change url back to app.host when i have internet
   return $.ajax({
-    url: 'http://localhost:3000' + '/sign-in',
+    url: app.host + '/sign-in',
     method: 'POST',
     data: data,
   });
@@ -36,7 +36,7 @@ const indexGames = function () {
   let token = app.user.token;
   // change url to app.host once i have internet
   return $.ajax({
-    url: 'http://localhost:3000' + '/games/',
+    url: app.host + '/games/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + token,
