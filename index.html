@@ -13,7 +13,6 @@
         <div class="navbar-header">yo dawg i heard you like tic-tac-toe</div>
         <div class="navbar-buttons">
           <button type="button" id="create-game" class="btn btn-default navbar-btn">New Game</button>
-          <button type="button" id="show-profile" class="btn btn-default navbar-btn">Profile</button>
           <button type="button" id="sign-out" class="btn btn-default navbar-btn">Sign Out</button>
         </div>
       </nav>
@@ -71,10 +70,13 @@
       <!-- INFO BAR -->
       <section id="info-bar" class='info-bar col-xs-4'>
 
-        <!-- <article class="misc-message-box" id="misc-message-box">
-          <div class="misc-message" id="misc-message">
-          </div>
-        </article> -->
+        <div class="info-bar-buttons" id="info-bar-buttons">
+          <button type="button" id="show-profile" class="btn btn-default info-bar-button">Profile</button>
+          <button type="button" id="show-game-status" class="btn btn-default info-bar-button">Game</button>
+        </div>
+
+        <div class="misc-message" id="misc-message">
+        </div>
 
         <article class="profile-view" id="profile-view">
           <div class="user-info" id="user-info">
@@ -89,7 +91,7 @@
                 <br>
                 <input type="password" name="passwords[new]" placeholder="Choose new password">
                 <br>
-                <input type="submit" name="submit" value="Change Password">
+                <input class="submit" type="submit" name="submit" value="Change Password">
               </fieldset>
             </form>
           </div>

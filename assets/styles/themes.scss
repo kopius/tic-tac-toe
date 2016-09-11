@@ -43,7 +43,7 @@ nav {
   margin-right: 10px;
 }
 
-// Stylings for authentication forms
+// Stylings for forms & buttons
 legend,
 form {
   color: $font-color;
@@ -52,6 +52,12 @@ form {
 input {
   background: $background;
   margin: 3px 0;
+}
+
+button,
+.submit {
+  background: $font-color;
+  color: $background;
 }
 
 .auth-box {
@@ -122,6 +128,18 @@ input {
   margin: 20px;
   padding: 5px;
 
+  .info-bar-buttons {
+    min-height: 1.5em;
+  }
+
+  .misc-message {
+    color: $alert-text;
+    margin: 20px auto;
+    min-height: 1.5em;
+    text-align: center;
+    width: 100%;
+  }
+
   > article {
     height: 96%;
     margin: 2%;
@@ -134,13 +152,6 @@ input {
 
     > div {
       margin-top: 20px;
-    }
-
-    .misc-message {
-      color: $alert-text;
-      margin: 20px auto;
-      min-height: 1.5em;
-      width: 100%;
     }
 
     .play-again {
