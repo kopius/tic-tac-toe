@@ -31,17 +31,17 @@
               <br>
               <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
               <br>
-              <input type="submit" name="submit" value="Sign up">
+              <input class="submit" type="submit" name="submit" value="Sign up">
             </fieldset>
           </form>
           <form id="sign-in" class='auth-box-form sign-in'>
             <fieldset>
-                <legend>and also sign in plz</legend>
+                <legend>(and also sign in plz)</legend>
                 <input type="email" name="credentials[email]" placeholder="Enter your email">
                 <br>
                 <input type="password" name="credentials[password]" placeholder="Enter your password">
                 <br>
-                <input type="submit" name="submit" value="Sign in">
+                <input class="submit" type="submit" name="submit" value="Sign in">
               </fieldset>
           </form>
         </div>
@@ -83,10 +83,11 @@
             <p>you have played</p>
             <p><span id="num-games"></span> games.</p>
           </div>
+          <hr>
           <div class="change-pw-box" id="change-pw-box">
             <form id="change-password" class='change-password'>
               <fieldset>
-                <legend>you can change your password</legend>
+                <legend>change your password:</legend>
                 <input type="password" name="passwords[old]" placeholder="Enter current password">
                 <br>
                 <input type="password" name="passwords[new]" placeholder="Choose new password">

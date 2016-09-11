@@ -143,7 +143,7 @@ button,
 
   .misc-message {
     color: $alert-text;
-    margin: 20px auto;
+    margin: 10px auto;
     min-height: 1.5em;
     text-align: center;
     width: 100%;
@@ -155,12 +155,16 @@ button,
     text-align: center;
     width: 96%;
 
+    > hr {
+      margin: 2px;
+    }
+
     p {
       font-size: 2.5em;
     }
 
     > div {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .play-again {
@@ -170,9 +174,5 @@ button,
     > .change-pw-box {
       text-align: left;
     }
-  }
-
-  input {
-    margin: 2px;
   }
 }
