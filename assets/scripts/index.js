@@ -16,4 +16,5 @@ $(() => {
   $('#create-game').hide();
   $('#show-profile').hide();
   $('#profile-view').hide();
+  $('#info-bar-buttons').hide();
 });

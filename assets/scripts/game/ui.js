@@ -36,7 +36,8 @@ const showGameView = function () {
   $('#whose-turn').show();
   $('#game-status-view').show();
   $('#profile-view').hide();
-  
+  $('#info-bar-buttons').show();
+
   displayWhoseTurn();
 };
 

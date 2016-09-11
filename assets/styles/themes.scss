@@ -126,10 +126,19 @@ button,
   box-sizing: border-box;
   height: $box-height;
   margin: 20px;
-  padding: 5px;
+  padding: 0;
 
   .info-bar-buttons {
-    min-height: 1.5em;
+    margin: 3px auto;
+    text-align: center;
+    width: 100%;
+
+    > .info-bar-button {
+      border: 0;
+      margin: 0;
+      padding: 5px 0;
+      width: 48%;
+    }
   }
 
   .misc-message {

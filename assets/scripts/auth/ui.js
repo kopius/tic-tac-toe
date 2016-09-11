@@ -21,6 +21,7 @@ const signInSuccess = (data) => {
   $('#create-game').show();
   $('#show-profile').show();
   $('#profile-view').hide();
+  $('#info-bar-buttons').show();
 };
 
 const signOutSuccess = () => {
@@ -33,6 +34,7 @@ const signOutSuccess = () => {
   $('#game-status-view').hide();
   $('#misc-message').text('');
   $('#profile-view').hide();
+  $('#info-bar-buttons').hide();
 
   // display success message in the UI
 
