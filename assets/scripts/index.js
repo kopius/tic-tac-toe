@@ -10,10 +10,10 @@ $(() => {
   gameEvents.addHandlers();
 
   // hide elements that should not show at load
-  $('#game-status').hide();
+  $('#game-status-view').hide();
   $('#game-board').hide();
   $('#sign-out').hide();
   $('#create-game').hide();
   $('#show-profile').hide();
-  $('#profile-box').hide();
+  $('#profile-view').hide();
 });

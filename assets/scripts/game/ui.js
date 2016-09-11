@@ -24,6 +24,22 @@ const displayWarning = function (warning) {
   $('#misc-message').text(warning);
 };
 
+const resetGameView = function () {
+  $('#misc-message').text('');
+  $('#win-message').hide();
+  let emptyCells = ['', '', '', '', '', '', '', '', ''];
+  emptyCells.forEach(paintBoard);
+
+};
+
+const showGameView = function () {
+  $('#whose-turn').show();
+  $('#game-status-view').show();
+  $('#profile-view').hide();
+  
+  displayWhoseTurn();
+};
+
 const createGameSuccess = function (data) {
   app.user.game = data.game;
 
@@ -34,16 +50,19 @@ const createGameSuccess = function (data) {
   console.log('app ', app);
 
   // reset the game view
-  $('#misc-message').text('');
-  $('#win-message').hide();
-  let emptyCells = ['', '', '', '', '', '', '', '', ''];
-  emptyCells.forEach(paintBoard);
-  $('#whose-turn').show();
-  $('#game-status').show();
-  $('#profile-box').hide();
+  resetGameView();
+  showGameView();
 
-  // display whose turn it is
-  displayWhoseTurn();
+  // $('#misc-message').text('');
+  // $('#win-message').hide();
+  // let emptyCells = ['', '', '', '', '', '', '', '', ''];
+  // emptyCells.forEach(paintBoard);
+  // $('#whose-turn').show();
+  // $('#game-status-view').show();
+  // $('#profile-view').hide();
+
+    // display whose turn it is
+  // displayWhoseTurn();
 };
 
 const createGameFailure = function () {

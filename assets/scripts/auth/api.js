@@ -11,7 +11,6 @@ const signUp = (data) => {
 };
 
 const signIn = (data) => {
-  // change url back to app.host when i have internet
   return $.ajax({
     url: app.host + '/sign-in',
     method: 'POST',
@@ -34,7 +33,7 @@ const signOut = () => {
 const indexGames = function () {
   // let id = app.user.id;
   let token = app.user.token;
-  // change url to app.host once i have internet
+  
   return $.ajax({
     url: app.host + '/games/',
     method: 'GET',

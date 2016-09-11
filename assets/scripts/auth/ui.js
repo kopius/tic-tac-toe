@@ -20,7 +20,7 @@ const signInSuccess = (data) => {
   $('#sign-out').show();
   $('#create-game').show();
   $('#show-profile').show();
-  $('#profile-box').hide();
+  $('#profile-view').hide();
 };
 
 const signOutSuccess = () => {
@@ -30,9 +30,9 @@ const signOutSuccess = () => {
   // AUTH VIEW - hide the game board and display the login forms
   $('#game-board').hide();
   $('#auth-box').show();
-  $('#game-status').hide();
+  $('#game-status-view').hide();
   $('#misc-message').text('');
-  $('#profile-box').hide();
+  $('#profile-view').hide();
 
   // display success message in the UI
 
@@ -47,7 +47,7 @@ const showProfile = function(data) {
   $('#num-games').text(numGames);
 
   // show user profile
-  $('#profile-box').show();
+  $('#profile-view').show();
 
 
 
