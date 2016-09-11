@@ -50,10 +50,6 @@ const showProfile = function(data) {
   $('#profile-view').show();
 
 
-
-  // show change-password form
-  // $('#change-pw-box').show();
-
 };
 
 const changePasswordSuccess = () => {

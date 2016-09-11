@@ -122,14 +122,7 @@ input {
   margin: 20px;
   padding: 5px;
 
-  .misc-message {
-    color: $alert-text;
-    margin: 20px auto;
-    min-height: 1.5em;
-    width: 100%;
-  }
-
-  .game-status-view {
+  > article {
     height: 96%;
     margin: 2%;
     text-align: center;
@@ -139,13 +132,24 @@ input {
       font-size: 2.5em;
     }
 
+    > div {
+      margin-top: 20px;
+    }
+
+    .misc-message {
+      color: $alert-text;
+      margin: 20px auto;
+      min-height: 1.5em;
+      width: 100%;
+    }
+
     .play-again {
       font-size: 1em;
     }
-  }
 
-  > form {
-    margin: 10px;
+    > .change-pw-box {
+      text-align: left;
+    }
   }
 
   input {
