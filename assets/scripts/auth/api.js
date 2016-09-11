@@ -30,19 +30,6 @@ const signOut = () => {
   });
 };
 
-const indexGames = function () {
-  // let id = app.user.id;
-  let token = app.user.token;
-  
-  return $.ajax({
-    url: app.host + '/games/',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + token,
-    },
-  });
-};
-
 const changePassword = (data) => {
   let id = app.user.id;
   let token = app.user.token;
@@ -60,6 +47,5 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  indexGames,
   changePassword,
 };

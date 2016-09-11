@@ -35,7 +35,20 @@ const patchGame = function (index, value, over) {
   });
 };
 
+const indexGames = function () {
+  let token = app.user.token;
+
+  return $.ajax({
+    url: app.host + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + token,
+    },
+  });
+};
+
 module.exports = {
   createGame,
   patchGame,
+  indexGames,
 };

@@ -2,10 +2,27 @@
 
 const app = require('../app');
 
-const paintBoard = function (element, index) {
+const paintCell = function (element, index) {
   let id = index + 1;
   let cellId = '#cell' + id;
   $(cellId).text(element);
+};
+
+const paintBoard = function (cells) {
+  cells.forEach(paintCell);
+};
+
+const resetBoard = function () {
+  let emptyCells = ['', '', '', '', '', '', '', '', ''];
+  paintBoard(emptyCells);
+};
+
+const displayWarning = function (warning) {
+  $('#misc-message').text(warning);
+};
+
+const resetWarning = function () {
+  $('#misc-message').text('');
 };
 
 const displayWhoseTurn = function () {
@@ -20,25 +37,31 @@ const changeWhoseTurn = function () {
   }
 };
 
-const displayWarning = function (warning) {
-  $('#misc-message').text(warning);
+const displayWinMessage = function () {
+  $('#whose-turn').hide();
+  $('#win-message').show();
+  $('#winning-player').text(app.winner);
 };
 
-const resetGameView = function () {
-  $('#misc-message').text('');
+const initializeGameView = function() {
+  resetWarning();
+  displayWhoseTurn();
   $('#win-message').hide();
-  let emptyCells = ['', '', '', '', '', '', '', '', ''];
-  emptyCells.forEach(paintBoard);
-
+  $('#whose-turn').show();
+  $('#show-game-status').show();
+  $('#info-bar-buttons').show();
 };
 
 const showGameView = function () {
-  $('#whose-turn').show();
+  resetWarning();
   $('#game-status-view').show();
   $('#profile-view').hide();
-  $('#info-bar-buttons').show();
+};
 
-  displayWhoseTurn();
+const showProfileView = function () {
+  resetWarning();
+  $('#game-status-view').hide();
+  $('#profile-view').show();
 };
 
 const createGameSuccess = function (data) {
@@ -47,44 +70,32 @@ const createGameSuccess = function (data) {
   // create an activePlayer property on app and initialize to 'x'
   app.activePlayer = 'x';
 
-  console.log("Game created successfully");
-  console.log('app ', app);
+  // reset the winner property on app
+  app.winner = null;
 
-  // reset the game view
-  resetGameView();
+  // reset the board, then initialize & show the game view
+  resetBoard();
+  initializeGameView();
   showGameView();
-
-  // $('#misc-message').text('');
-  // $('#win-message').hide();
-  // let emptyCells = ['', '', '', '', '', '', '', '', ''];
-  // emptyCells.forEach(paintBoard);
-  // $('#whose-turn').show();
-  // $('#game-status-view').show();
-  // $('#profile-view').hide();
-
-    // display whose turn it is
-  // displayWhoseTurn();
 };
 
 const createGameFailure = function () {
   $('#misc-message').text("failed to create game");
 };
 
+// This function fires every turn, updating the UI to reflect the latest move
 const updateGameSuccess = function (data) {
-  // update the game object in app.js
+  // update the game object in app.js and assign to a local variable
   app.user.game = data.game;
   let game = app.user.game;
 
   // update the UI
-  let cells = game.cells;
-  cells.forEach(paintBoard);
-  displayWarning('');
+  paintBoard(game.cells);
+  resetWarning();
 
   // if the game is over, display a win message
   if (game.over) {
-    $('#whose-turn').hide();
-    $('#win-message').show();
-    $('#winning-player').text(app.winner);
+    displayWinMessage();
     return;
   }
 
@@ -95,14 +106,33 @@ const updateGameSuccess = function (data) {
   displayWhoseTurn();
 };
 
-const updateGameFailure = function (error) {
-  console.log(error);
+const updateGameFailure = function () {
+  $('#misc-message').text('uh-oh something went wrong');
+};
+
+const showProfile = function(data) {
+  app.user.games = data.games;
+  let games = app.user.games;
+
+  // update the number of games shown in profile
+  let numGames = games.length;
+  $('#num-games').text(numGames);
+
+  // show user profile
+  showProfileView();
+};
+
+const failure = () => {
+  $('#misc-message').text('uh-oh something went wrong');
 };
 
 module.exports = {
   displayWarning,
+  showGameView,
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,
   updateGameFailure,
+  showProfile,
+  failure,
 };

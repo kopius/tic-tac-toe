@@ -2,6 +2,10 @@
 
 const app = require('../app');
 
+const resetWarning = function () {
+  $('#misc-message').text('');
+};
+
 const signUpSuccess = (data) => {
   //display success message in the UI and prompt them to sign in
 
@@ -15,12 +19,14 @@ const signInSuccess = (data) => {
   app.user = data.user;
 
   // GAME VIEW - hide the login forms and reveal the game board
+  resetWarning();
   $('#auth-box').hide();
   $('#game-board').show();
   $('#sign-out').show();
   $('#create-game').show();
   $('#show-profile').show();
   $('#profile-view').hide();
+  $('#show-game-status').hide();
   $('#info-bar-buttons').show();
 };
 
@@ -36,21 +42,8 @@ const signOutSuccess = () => {
   $('#profile-view').hide();
   $('#info-bar-buttons').hide();
 
+  $('#misc-message').text('you have been signed out');
   // display success message in the UI
-
-};
-
-const showProfile = function(data) {
-  app.user.games = data.games;
-  let games = app.user.games;
-
-  // update the number of games shown in profile
-  let numGames = games.length;
-  $('#num-games').text(numGames);
-
-  // show user profile
-  $('#profile-view').show();
-
 
 };
 
@@ -66,7 +59,6 @@ module.exports = {
   signUpSuccess,
   signInSuccess,
   signOutSuccess,
-  showProfile,
   changePasswordSuccess,
   failure,
 };

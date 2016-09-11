@@ -18,6 +18,18 @@ const updateGame = function (index, value, done) {
     .fail(ui.updateGameSuccess);
 };
 
+const onShowProfile = function (event) {
+  event.preventDefault();
+
+  api.indexGames()
+    .done(ui.showProfile)
+    .fail(ui.failure);
+};
+
+const onShowGameStatus = function () {
+  ui.showGameView();
+};
+
 const onClickCell = function (event) {
   event.preventDefault();
   let index = event.data.index;
@@ -28,6 +40,8 @@ const onClickCell = function (event) {
 
 const addHandlers = function () {
   $('#create-game').on('click', onCreateGame);
+  $('#show-profile').on('click', onShowProfile);
+  $('#show-game-status').on('click', onShowGameStatus);
   $('#cell1').on('click', {index: 0}, onClickCell);
   $('#cell2').on('click', {index: 1}, onClickCell);
   $('#cell3').on('click', {index: 2}, onClickCell);
