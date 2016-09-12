@@ -11,7 +11,7 @@ const onSignUp = function (event) {
 
   api.signUp(data)
     .done(ui.signUpSuccess)
-    .fail(ui.failure);
+    .fail(ui.signUpFailure);
 };
 
 const onSignIn = function (event) {

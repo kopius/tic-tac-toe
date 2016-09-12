@@ -8,10 +8,10 @@ const isLegalMove = function (index) {
   let game = app.user.game;
 
   if(game.over === true) {
-    ui.displayWarning("invalid move - the game is over");
+    ui.displayAlert("invalid move - the game is over");
     return false;
   } else if (game.cells[index] !== '') {
-    ui.displayWarning("invalid move - that square is taken");
+    ui.displayAlert("invalid move - that square is taken");
     return false;
   }
   return true;

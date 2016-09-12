@@ -2,16 +2,26 @@
 
 const app = require('../app');
 
-const resetWarning = function () {
-  $('#misc-message').text('');
+const displayAlert = function (alert) {
+  $('#misc-message').text(alert);
+};
+
+const resetAlert = function () {
+  displayAlert('');
 };
 
 const signUpSuccess = (data) => {
-  //display success message in the UI and prompt them to sign in
+  // write a greeting message confirming sign-up and instructing them to sign in
+  let email = data.user.email;
+  let greeting = "welcome, " + email + "!";
+  greeting += " please sign in to play.";
 
-  // console checks
-  console.log("Signed up successfully");
-  console.log("data is ", data);
+  // display greeting to user
+  displayAlert(greeting);
+};
+
+const signUpFailure = () => {
+  displayAlert("that username is already taken");
 };
 
 const signInSuccess = (data) => {
@@ -19,7 +29,7 @@ const signInSuccess = (data) => {
   app.user = data.user;
 
   // GAME VIEW - hide the login forms and reveal the game board
-  resetWarning();
+  resetAlert();
   $('#auth-box').hide();
   $('#game-board').show();
   $('#sign-out').show();
@@ -57,6 +67,7 @@ const failure = () => {
 
 module.exports = {
   signUpSuccess,
+  signUpFailure,
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,

@@ -17,11 +17,11 @@ const resetBoard = function () {
   paintBoard(emptyCells);
 };
 
-const displayWarning = function (warning) {
+const displayAlert = function (warning) {
   $('#misc-message').text(warning);
 };
 
-const resetWarning = function () {
+const resetAlert = function () {
   $('#misc-message').text('');
 };
 
@@ -44,7 +44,7 @@ const displayWinMessage = function () {
 };
 
 const initializeGameView = function() {
-  resetWarning();
+  resetAlert();
   displayWhoseTurn();
   $('#win-message').hide();
   $('#whose-turn').show();
@@ -53,13 +53,13 @@ const initializeGameView = function() {
 };
 
 const showGameView = function () {
-  resetWarning();
+  resetAlert();
   $('#game-status-view').show();
   $('#profile-view').hide();
 };
 
 const showProfileView = function () {
-  resetWarning();
+  resetAlert();
   $('#game-status-view').hide();
   $('#profile-view').show();
 };
@@ -91,7 +91,7 @@ const updateGameSuccess = function (data) {
 
   // update the UI
   paintBoard(game.cells);
-  resetWarning();
+  resetAlert();
 
   // if the game is over, display a win message
   if (game.over) {
@@ -127,7 +127,7 @@ const failure = () => {
 };
 
 module.exports = {
-  displayWarning,
+  displayAlert,
   showGameView,
   createGameSuccess,
   createGameFailure,
