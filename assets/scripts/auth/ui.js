@@ -78,6 +78,11 @@ const signInSuccess = (data) => {
 };
 
 
+const signInFailure = function () {
+  displayAlert("incorrect email and/or password");
+};
+
+
 const signOutSuccess = () => {
   // clear the user object and any text left in the authorization forms
   app.user = null;
@@ -92,23 +97,30 @@ const signOutSuccess = () => {
 };
 
 
+const signOutFailure = () => {
+  displayAlert('cannot sign out at this time');
+};
+
+
 const changePasswordSuccess = () => {
+  clearFormFields();
   displayAlert('password changed');
 };
 
 
-const failure = () => {
-  displayAlert('uh-oh something went wrong');
+const changePasswordFailure = () => {
+  displayAlert('incorrect password or invalid input');
 };
 
 
 module.exports = {
-  resetBoard,
   showAuthView,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
+  signInFailure,
   signOutSuccess,
+  signOutFailure,
   changePasswordSuccess,
-  failure,
+  changePasswordFailure,
 };

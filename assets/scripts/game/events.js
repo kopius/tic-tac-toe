@@ -35,6 +35,7 @@ const onClickCell = function (event) {
   let index = event.data.index;
 
   let turnResult = logic.processTurn(index);
+  // wrap in if statement so updateGame is not called on an invalid move
   updateGame(turnResult[0], turnResult[1], turnResult[2]);
 };
 
