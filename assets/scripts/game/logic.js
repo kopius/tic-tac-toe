@@ -68,7 +68,6 @@ const processTurn = function (index) {
 
   // now decide whether it's a win or not
   let over = isOver(index, value);
-  console.log("app.winner is ", app.winner);
 
   // return the key info about this turn
   return [index, value, over];

@@ -52,7 +52,7 @@ const initializeGameView = function() {
   $('#info-bar-buttons').show();
 };
 
-const showGameView = function () {
+const showGameStatusView = function () {
   resetAlert();
   $('#game-status-view').show();
   $('#profile-view').hide();
@@ -73,10 +73,10 @@ const createGameSuccess = function (data) {
   // reset the winner property on app
   app.winner = null;
 
-  // reset the board, then initialize & show the game view
+  // reset the board, then initialize & show the game status view
   resetBoard();
   initializeGameView();
-  showGameView();
+  showGameStatusView();
 };
 
 const createGameFailure = function () {
@@ -128,7 +128,7 @@ const failure = () => {
 
 module.exports = {
   displayAlert,
-  showGameView,
+  showGameStatusView,
   createGameSuccess,
   createGameFailure,
   updateGameSuccess,

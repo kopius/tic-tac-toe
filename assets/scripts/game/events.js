@@ -27,7 +27,7 @@ const onShowProfile = function (event) {
 };
 
 const onShowGameStatus = function () {
-  ui.showGameView();
+  ui.showGameStatusView();
 };
 
 const onClickCell = function (event) {

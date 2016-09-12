@@ -2,6 +2,7 @@
 
 const authEvents = require('./auth/events.js');
 const gameEvents = require('./game/events.js');
+const authUi = require('./auth/ui.js');
 
 // On document ready
 $(() => {
@@ -9,12 +10,6 @@ $(() => {
   authEvents.addHandlers();
   gameEvents.addHandlers();
 
-  // hide elements that should not show at load
-  $('#game-status-view').hide();
-  $('#game-board').hide();
-  $('#sign-out').hide();
-  $('#create-game').hide();
-  $('#show-profile').hide();
-  $('#profile-view').hide();
-  $('#info-bar-buttons').hide();
+  // show the authorization view
+  authUi.showAuthView();
 });

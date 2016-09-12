@@ -11,28 +11,35 @@ const resetAlert = function () {
 };
 
 const showAuthView = function () {
+  // hide the game board and info bar content
+  $('#game-board').hide();
+  $('#game-status-view').hide();
+  $('#profile-view').hide();
+  resetAlert();
 
+  // change which buttons are visible
+  $('#navbar-buttons').hide();
+  $('#info-bar-buttons').hide();
+  $('#show-game-status').hide();
+
+  // show the authentication forms
+  $('#auth-box').show();
 };
 
 const showGameView = function () {
   // hide authentication forms and show the game board
   $('#auth-box').hide();
   $('#game-board').show();
+  resetAlert();
 
   // change which buttons are visible
   $('#info-bar-buttons').show();
-  $('#sign-out').show();
-  $('#create-game').show();
-  $('#show-profile').show();
-  $('#show-game-status').hide();
-
-  // these shouldn't be necessary if sign-out does its job
-  // $('#profile-view').hide();
-  // $('#show-game-status').hide();
+  $('#navbar-buttons').show();
 };
 
+
 const signUpSuccess = (data) => {
-  // write a greeting message confirming sign-up and instructing them to sign in
+  // write a greeting message confirming sign-up and instructing user to sign in
   let email = data.user.email;
   let greeting = "welcome, " + email + "!";
   greeting += " please sign in to play.";
@@ -51,46 +58,29 @@ const signInSuccess = (data) => {
 
   // show the game view
   showGameView();
-
-  // // GAME VIEW - hide the login forms and reveal the game board
-  // resetAlert();
-  // $('#auth-box').hide();
-  // $('#game-board').show();
-  // $('#sign-out').show();
-  // $('#create-game').show();
-  // $('#show-profile').show();
-  // $('#profile-view').hide();
-  // $('#show-game-status').hide();
-  // $('#info-bar-buttons').show();
-  // hide the "newgame" and "signout" buttons
 };
 
 const signOutSuccess = () => {
   // clear the user object
   app.user = null;
 
-  // AUTH VIEW - hide the game board and display the login forms
-  $('#game-board').hide();
-  $('#auth-box').show();
-  $('#game-status-view').hide();
-  $('#misc-message').text('');
-  $('#profile-view').hide();
-  $('#info-bar-buttons').hide();
+  // show the authorization view
+  showAuthView();
 
-  resetAlert();
+  // confirm sign-out with a friendly message
   displayAlert('thanks for playing!');
-
 };
 
 const changePasswordSuccess = () => {
-  $('#misc-message').text('password changed. kind of paranoid, aren\'t you?');
+  displayAlert('password changed');
 };
 
 const failure = () => {
-  $('#misc-message').text('uh-oh something went wrong');
+  displayAlert('uh-oh something went wrong');
 };
 
 module.exports = {
+  showAuthView,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
