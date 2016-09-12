@@ -4,6 +4,7 @@ const api = require('./api');
 const ui = require('./ui');
 const logic = require('./logic');
 
+// Creates a new game when the "New Game" button is clicked
 const onCreateGame = function (event) {
   event.preventDefault();
 
@@ -12,12 +13,14 @@ const onCreateGame = function (event) {
     .fail(ui.createGameFailure);
 };
 
+// Takes the result of a valid turn and updates the state of the game
 const updateGame = function (index, value, done) {
   api.patchGame(index, value, done)
     .done(ui.updateGameSuccess)
     .fail(ui.updateGameSuccess);
 };
 
+// Switches to the user profile view when the "Profile" button is clicked
 const onShowProfile = function (event) {
   event.preventDefault();
 
@@ -26,36 +29,38 @@ const onShowProfile = function (event) {
     .fail(ui.indexGamesFailure);
 };
 
+// Switches to the game status view when the "Game" button is clicked
 const onShowGameStatus = function () {
   ui.showGameStatusView();
 };
 
+// Starts a game turn when a cell of the board is clicked
 const onClickCell = function (event) {
   event.preventDefault();
   let index = event.data.index;
 
   let turnResult = logic.processTurn(index);
-  // wrap in if statement so updateGame is not called on an invalid move
 
-  // if processTurn competes successfully, apply the result
+  // if processTurn returns a valid result, apply the result
   if (turnResult) {
     updateGame(turnResult.index, turnResult.value, turnResult.over);
   }
 };
 
+// Adds click handlers for the cells of the game board
+const addCellHandlers = function (numCells) {
+  for (let i = 0; i < numCells; i++) {
+    let cellId = '#cell' + (i+1);
+    $(cellId).on('click', {index: i}, onClickCell);
+  }
+};
+
+// Adds event handlers for game-related events
 const addHandlers = function () {
   $('#create-game').on('click', onCreateGame);
   $('#show-profile').on('click', onShowProfile);
   $('#show-game-status').on('click', onShowGameStatus);
-  $('#cell1').on('click', {index: 0}, onClickCell);
-  $('#cell2').on('click', {index: 1}, onClickCell);
-  $('#cell3').on('click', {index: 2}, onClickCell);
-  $('#cell4').on('click', {index: 3}, onClickCell);
-  $('#cell5').on('click', {index: 4}, onClickCell);
-  $('#cell6').on('click', {index: 5}, onClickCell);
-  $('#cell7').on('click', {index: 6}, onClickCell);
-  $('#cell8').on('click', {index: 7}, onClickCell);
-  $('#cell9').on('click', {index: 8}, onClickCell);
+  addCellHandlers(9);
 };
 
 module.exports = {

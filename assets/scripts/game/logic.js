@@ -3,7 +3,6 @@
 const app = require('../app.js');
 const ui = require('./ui.js');
 
-
 // Determines whether an attempted move is legal
 // and displays an appropriate alert if it is not
 const isLegalMove = function (index) {
@@ -22,14 +21,12 @@ const isLegalMove = function (index) {
   return true;
 };
 
-
 // Checks to see if the game has ended in a tie
 const isTieGame = function (cells) {
   if (cells.indexOf('') === -1){
       return true;
   }
 };
-
 
 // Checks to see if the latest move will end the game
 const isOver = function (index, value) {
@@ -64,7 +61,6 @@ const isOver = function (index, value) {
     }
 };
 
-
 // Processes a single game turn from either player
 const processTurn = function (index) {
   // is it a legal move?
@@ -86,7 +82,6 @@ const processTurn = function (index) {
   // return the key info about this turn
   return turnResult;
 };
-
 
 module.exports = {
   processTurn,
