@@ -10,6 +10,27 @@ const resetAlert = function () {
   displayAlert('');
 };
 
+const showAuthView = function () {
+
+};
+
+const showGameView = function () {
+  // hide authentication forms and show the game board
+  $('#auth-box').hide();
+  $('#game-board').show();
+
+  // change which buttons are visible
+  $('#info-bar-buttons').show();
+  $('#sign-out').show();
+  $('#create-game').show();
+  $('#show-profile').show();
+  $('#show-game-status').hide();
+
+  // these shouldn't be necessary if sign-out does its job
+  // $('#profile-view').hide();
+  // $('#show-game-status').hide();
+};
+
 const signUpSuccess = (data) => {
   // write a greeting message confirming sign-up and instructing them to sign in
   let email = data.user.email;
@@ -28,16 +49,20 @@ const signInSuccess = (data) => {
   // store new user in app.user
   app.user = data.user;
 
-  // GAME VIEW - hide the login forms and reveal the game board
-  resetAlert();
-  $('#auth-box').hide();
-  $('#game-board').show();
-  $('#sign-out').show();
-  $('#create-game').show();
-  $('#show-profile').show();
-  $('#profile-view').hide();
-  $('#show-game-status').hide();
-  $('#info-bar-buttons').show();
+  // show the game view
+  showGameView();
+
+  // // GAME VIEW - hide the login forms and reveal the game board
+  // resetAlert();
+  // $('#auth-box').hide();
+  // $('#game-board').show();
+  // $('#sign-out').show();
+  // $('#create-game').show();
+  // $('#show-profile').show();
+  // $('#profile-view').hide();
+  // $('#show-game-status').hide();
+  // $('#info-bar-buttons').show();
+  // hide the "newgame" and "signout" buttons
 };
 
 const signOutSuccess = () => {
@@ -52,8 +77,8 @@ const signOutSuccess = () => {
   $('#profile-view').hide();
   $('#info-bar-buttons').hide();
 
-  $('#misc-message').text('you have been signed out');
-  // display success message in the UI
+  resetAlert();
+  displayAlert('thanks for playing!');
 
 };
 
