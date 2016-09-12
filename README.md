@@ -20,8 +20,8 @@ tells a bit about how I got started with this project.
 I knew that I wanted the game to be visually simple. I opted for a minimialist
 layout that ultimately changed very little from my original wireframes:
 
--   [Wireframe 1](./assets/images/wireframe-1.png)
--   [Wireframe 2](./assets/images/wireframe-2.png)
+-   [Wireframe 1](https://github.com/kopiusmaximus/game-project-scope-study/blob/response/assets/images/wireframe-1.png)
+-   [Wireframe 2](https://github.com/kopiusmaximus/game-project-scope-study/blob/response/assets/images/wireframe-2.png)
 
 This simple aesthetic is reinforced by a mild, coffee-and-cream color scheme;
 all-lowercase typography; and laconic directions infused with light snark.
@@ -35,7 +35,6 @@ key game components.
 
 For additional perspective on my planning process, here are a few of the early
 user stories that drove development:
-
 
 -   _As a user, I want to create an account so I can keep track of how many games
 I have played._
@@ -56,10 +55,6 @@ accidentally make an illegal move or keep playing after a game has ended.
 have to finish games whose eventual outcome is already obvious.
 
 <!--
-Document your planning and tell a story about your development process and problem-solving strategy.
-
--link to planning docs
--tell story
 -talk about how i started by communicating with the API, instead of leaving that
 until the end. this informed how I wrote the game logic, ensuring that my front
 end handled game state in a way that made it easy to patch game updates to the
