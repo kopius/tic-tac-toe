@@ -19,6 +19,11 @@ const clearFormFields = function () {
 };
 
 
+const resetBoard = function () {
+  $('#game-board').find('.game-board-col').text('');
+};
+
+
 const showAuthView = function () {
   // hide the game board and info bar content
   $('#game-board').hide();
@@ -76,9 +81,10 @@ const signInSuccess = (data) => {
 const signOutSuccess = () => {
   // clear the user object and any text left in the authorization forms
   app.user = null;
-  clearFormFields();
 
-  // show the authorization view
+  // reset the view
+  clearFormFields();
+  resetBoard();
   showAuthView();
 
   // confirm sign-out with a friendly message
@@ -97,6 +103,7 @@ const failure = () => {
 
 
 module.exports = {
+  resetBoard,
   showAuthView,
   signUpSuccess,
   signUpFailure,
