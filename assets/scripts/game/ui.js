@@ -122,7 +122,7 @@ const updateGameSuccess = function (data) {
 
 
 const updateGameFailure = function () {
-  $('#misc-message').text('uh-oh something went wrong');
+  $('#misc-message').text('failed to update the game');
 };
 
 

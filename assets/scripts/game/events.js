@@ -36,7 +36,11 @@ const onClickCell = function (event) {
 
   let turnResult = logic.processTurn(index);
   // wrap in if statement so updateGame is not called on an invalid move
-  updateGame(turnResult[0], turnResult[1], turnResult[2]);
+
+  // if processTurn competes successfully, apply the result
+  if (turnResult) {
+    updateGame(turnResult.index, turnResult.value, turnResult.over);
+  }
 };
 
 const addHandlers = function () {
