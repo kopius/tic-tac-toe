@@ -2,13 +2,22 @@
 
 const app = require('../app');
 
+
 const displayAlert = function (alert) {
   $('#misc-message').text(alert);
 };
 
+
 const resetAlert = function () {
   displayAlert('');
 };
+
+
+const clearFormFields = function () {
+  $('form').find('input[type=password]').val('');
+  $('form').find('input[type=email]').val('');
+};
+
 
 const showAuthView = function () {
   // hide the game board and info bar content
@@ -25,6 +34,7 @@ const showAuthView = function () {
   // show the authentication forms
   $('#auth-box').show();
 };
+
 
 const showGameView = function () {
   // hide authentication forms and show the game board
@@ -48,9 +58,11 @@ const signUpSuccess = (data) => {
   displayAlert(greeting);
 };
 
+
 const signUpFailure = () => {
   displayAlert("that username is already taken");
 };
+
 
 const signInSuccess = (data) => {
   // store new user in app.user
@@ -60,9 +72,11 @@ const signInSuccess = (data) => {
   showGameView();
 };
 
+
 const signOutSuccess = () => {
-  // clear the user object
+  // clear the user object and any text left in the authorization forms
   app.user = null;
+  clearFormFields();
 
   // show the authorization view
   showAuthView();
@@ -71,13 +85,16 @@ const signOutSuccess = () => {
   displayAlert('thanks for playing!');
 };
 
+
 const changePasswordSuccess = () => {
   displayAlert('password changed');
 };
 
+
 const failure = () => {
   displayAlert('uh-oh something went wrong');
 };
+
 
 module.exports = {
   showAuthView,
