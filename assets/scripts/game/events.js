@@ -23,7 +23,7 @@ const onShowProfile = function (event) {
 
   api.indexGames()
     .done(ui.showProfile)
-    .fail(ui.failure);
+    .fail(ui.indexGamesFailure);
 };
 
 const onShowGameStatus = function () {

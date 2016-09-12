@@ -2,32 +2,39 @@
 
 const app = require('../app');
 
+
 const paintCell = function (element, index) {
   let id = index + 1;
   let cellId = '#cell' + id;
   $(cellId).text(element);
 };
 
+
 const paintBoard = function (cells) {
   cells.forEach(paintCell);
 };
+
 
 const resetBoard = function () {
   let emptyCells = ['', '', '', '', '', '', '', '', ''];
   paintBoard(emptyCells);
 };
 
-const displayAlert = function (warning) {
-  $('#misc-message').text(warning);
+
+const displayAlert = function (alert) {
+  $('#misc-message').text(alert);
 };
+
 
 const resetAlert = function () {
   $('#misc-message').text('');
 };
 
+
 const displayWhoseTurn = function () {
   $('#active-player').text("player " + app.activePlayer + '\'s');
 };
+
 
 const changeWhoseTurn = function () {
   if (app.activePlayer === 'x') {
@@ -37,11 +44,13 @@ const changeWhoseTurn = function () {
   }
 };
 
+
 const displayWinMessage = function () {
   $('#whose-turn').hide();
   $('#win-message').show();
   $('#winning-player').text(app.winner);
 };
+
 
 const initializeGameView = function() {
   resetAlert();
@@ -52,17 +61,20 @@ const initializeGameView = function() {
   $('#info-bar-buttons').show();
 };
 
+
 const showGameStatusView = function () {
   resetAlert();
   $('#game-status-view').show();
   $('#profile-view').hide();
 };
 
+
 const showProfileView = function () {
   resetAlert();
   $('#game-status-view').hide();
   $('#profile-view').show();
 };
+
 
 const createGameSuccess = function (data) {
   app.user.game = data.game;
@@ -79,9 +91,11 @@ const createGameSuccess = function (data) {
   showGameStatusView();
 };
 
+
 const createGameFailure = function () {
   $('#misc-message').text("failed to create game");
 };
+
 
 // This function fires every turn, updating the UI to reflect the latest move
 const updateGameSuccess = function (data) {
@@ -106,9 +120,11 @@ const updateGameSuccess = function (data) {
   displayWhoseTurn();
 };
 
+
 const updateGameFailure = function () {
   $('#misc-message').text('uh-oh something went wrong');
 };
+
 
 const showProfile = function(data) {
   app.user.games = data.games;
@@ -122,9 +138,11 @@ const showProfile = function(data) {
   showProfileView();
 };
 
-const failure = () => {
-  $('#misc-message').text('uh-oh something went wrong');
+
+const indexGamesFailure = function() {
+  displayAlert('cannot display profile at this time');
 };
+
 
 module.exports = {
   displayAlert,
@@ -134,5 +152,5 @@ module.exports = {
   updateGameSuccess,
   updateGameFailure,
   showProfile,
-  failure,
+  indexGamesFailure,
 };
