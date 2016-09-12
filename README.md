@@ -7,14 +7,14 @@ A browser-based Tic-Tac-Toe game.
 -   HTML/CSS/JavaScript front end
 -   Ruby-on-Rails back end with an API provided by General Assembly course staff
 -   jQuery for DOM manipulation and event handling
--   AJAX for make server requests
+-   AJAX for server requests
 -   Structure and style achieved with the help of Bootstrap and SASS
 
 ## Planning \& Development
 
 [This
 document](https://github.com/kopiusmaximus/game-project-scope-study/blob/response/study.md)
-tells a bit about how I got started with this project.
+tells a bit about how I got started with the project.
 
 I knew that I wanted the game to be visually simple. I opted for a minimialist
 layout that ultimately changed very little from my original wireframes:
@@ -28,24 +28,26 @@ all-lowercase typography; and laconic directions infused with light snark.
 Most components of the app fell into one of two categories: authentication and
 gameplay. This division informed my separation of concerns in the project's
 directory structure, as well as providing a framework for the app's view states.
-You may notice that the two main boxes on the page house are dual-functioning:
+You may notice that the two main boxes on the page are dual-functioning:
 depending on the current view state, they house either authentication forms or
 key game components.
 
 Swapping view states was a later addition to the project, however. I began with
 basic authentication forms and a rough 3x3 grid for the game board. Before
-writing any of the game logic, I established communication with the API.
-Once I had the server returning a new game object, I attached it to the app
-object and referenced it continually as I began coding up the rules of the game.
-By doing things in this order, I avoided spending time rewriting my game logic
-to accommodate the object format dictated by the API.
+writing any of the game logic, I established communication with the API via AJAX
+calls. Once I had the server returning a new game object, I attached it to the
+app and referenced it continually as I began coding up the rules of the game. By
+doing things in this order, I avoided time spent rewriting my game logic to
+accommodate the object format dictated by the API.
 
 With the game logic in place and needing little adjustment, I began developing
-the rest of the site's core components: a basic color palette and typography;
-UI functions to paint the board with x's and o's, then clear it for new games;
-different views and the jQuery show/hide calls necessary to transition between
-them; and alert messages to help guide the user through gameplay and site
-navigation.
+the rest of the site's core components:
+
+-   a basic color palette and typography
+-   functions to paint the board with x's and o's, then clear it for new games
+-   different views and the jQuery show/hide calls necessary to transition
+between them
+-   alert messages to help guide the user through gameplay and site navigation.
 
 Lastly, I went through a final process of refactoring the code, finding the
 natural break points within long processes and breaking them out into separate
