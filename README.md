@@ -9,6 +9,7 @@ A browser-based Tic-Tac-Toe game.
 -   jQuery for DOM manipulation and event handling
 -   AJAX for server requests
 -   Structure and style achieved with the help of Bootstrap and SASS
+-   Version control and client hosting via GitHub
 
 ## Planning \& Development
 
