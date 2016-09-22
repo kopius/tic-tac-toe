@@ -1,16 +1,19 @@
 $box-height: 400px;
 $cell-border: 4px solid $dark-brown;
+$border-box: border-box;
 
 body {
   background: $background;
   color: $font-color;
+  box-sizing: $border-box;
   font-family: $body-font;
-  margin: 50px 0;
+  margin: 50px auto;
 }
 
 // Stylings for the navigation bar
 nav {
   background: $box-background;
+  box-sizing: $border-box;
   color: $font-color;
   height: 5em;
   position: relative;
@@ -75,12 +78,13 @@ button,
 .game-board-box {
   background: $box-background;
   border-radius: 4px;
-  box-sizing: border-box;
+  box-sizing: $border-box;
   height: $box-height;
   margin: 20px;
 
   .game-board {
     margin: 50px auto;
+    min-width: 300px;
     width: 100%;
   }
 
@@ -123,7 +127,7 @@ button,
 .info-bar {
   background: $box-background;
   border-radius: 4px;
-  box-sizing: border-box;
+  box-sizing: $border-box;
   height: $box-height;
   margin: 20px;
   padding: 0;

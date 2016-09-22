@@ -4,13 +4,14 @@
       <title>tic-tac-toe</title>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     </head>
-    <body class="container-fluid">
+    <body>
 
       <nav class="navbar">
-        <div class="navbar-header">yo dawg i heard you like tic-tac-toe</div>
+        <div class="navbar-header">tic-tac-toe</div>
         <div class="navbar-buttons" id="navbar-buttons">
           <button type="button" id="create-game" class="btn btn-default navbar-btn">New Game</button>
           <button type="button" id="sign-out" class="btn btn-default navbar-btn">Sign Out</button>
@@ -24,7 +25,7 @@
         <div class='auth-box' id='auth-box'>
           <form id="sign-up" class='auth-box-form sign-up'>
             <fieldset>
-              <legend>you gotta sign up to play tho</legend>
+              <legend>create an account</legend>
               <input type="email" name="credentials[email]" placeholder="Enter your email">
               <br>
               <input type="password" name="credentials[password]" placeholder="Create a password">
@@ -36,7 +37,7 @@
           </form>
           <form id="sign-in" class='auth-box-form sign-in'>
             <fieldset>
-                <legend>(and also sign in plz)</legend>
+                <legend>sign in to play!</legend>
                 <input type="email" name="credentials[email]" placeholder="Enter your email">
                 <br>
                 <input type="password" name="credentials[password]" placeholder="Enter your password">

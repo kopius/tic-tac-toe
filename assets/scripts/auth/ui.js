@@ -72,7 +72,7 @@ const signUpFailure = () => {
 const signInSuccess = (data) => {
   // store new user in app.user
   app.user = data.user;
-
+  console.log('app.user is', app.user);
   // show the game view
   showGameView();
 };
