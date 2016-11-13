@@ -17,7 +17,7 @@ A browser-based Tic-Tac-Toe game.
 document](https://github.com/kopiusmaximus/game-project-scope-study/blob/response/study.md)
 tells a bit about how I got started with the project.
 
-I knew that I wanted the game to be visually simple. I opted for a minimialist
+I knew that I wanted the game to be visually simple. I opted for a minimalist
 layout that ultimately changed very little from my original wireframes:
 
 -   [Wireframe 1](https://github.com/kopiusmaximus/game-project-scope-study/blob/response/assets/images/wireframe-1.png)
