@@ -65,7 +65,7 @@ const signUpSuccess = (data) => {
 
 
 const signUpFailure = () => {
-  displayAlert("that username is already taken");
+  displayAlert("could not create an account");
 };
 
 

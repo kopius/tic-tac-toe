@@ -1,116 +1,121 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
       <title>tic-tac-toe</title>
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    </head>
-    <body>
+  </head>
+  <body>
+    <div class='container-fluid'>
+      <div class='row'>
+        <nav class="navbar">
+          <div class="navbar-header">tic-tac-toe</div>
+          <div class="navbar-buttons" id="navbar-buttons">
+            <button type="button" id="create-game" class="btn btn-default navbar-btn">New Game</button>
+            <button type="button" id="sign-out" class="btn btn-default navbar-btn">Sign Out</button>
+          </div>
+        </nav>
+      </div>
 
-      <nav class="navbar">
-        <div class="navbar-header">tic-tac-toe</div>
-        <div class="navbar-buttons" id="navbar-buttons">
-          <button type="button" id="create-game" class="btn btn-default navbar-btn">New Game</button>
-          <button type="button" id="sign-out" class="btn btn-default navbar-btn">Sign Out</button>
-        </div>
-      </nav>
+        <!-- THIS SECTION HOUSES THE GAME BOARD AND AUTHENTICATION FORMS -->
+      <div class='row row-main'>
+        <section class='col-xs-6 game-board-box'>
 
-      <!-- THIS SECTION HOUSES THE GAME BOARD AND AUTHENTICATION FORMS -->
-      <section class='col-xs-6 game-board-box'>
-
-        <!-- AUTHENTICATION FORMS -->
-        <div class='auth-box' id='auth-box'>
-          <form id="sign-up" class='auth-box-form sign-up'>
-            <fieldset>
-              <legend>create an account</legend>
-              <input type="email" name="credentials[email]" placeholder="Enter your email">
-              <br>
-              <input type="password" name="credentials[password]" placeholder="Create a password">
-              <br>
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
-              <br>
-              <input class="submit" type="submit" name="submit" value="Sign up">
-            </fieldset>
-          </form>
-          <form id="sign-in" class='auth-box-form sign-in'>
-            <fieldset>
-                <legend>sign in to play!</legend>
+          <!-- AUTHENTICATION FORMS -->
+          <div class='auth-box' id='auth-box'>
+            <form id="sign-up" class='auth-box-form sign-up'>
+              <fieldset>
+                <legend>create an account</legend>
                 <input type="email" name="credentials[email]" placeholder="Enter your email">
                 <br>
-                <input type="password" name="credentials[password]" placeholder="Enter your password">
+                <input type="password" name="credentials[password]" placeholder="Create a password">
                 <br>
-                <input class="submit" type="submit" name="submit" value="Sign in">
-              </fieldset>
-          </form>
-        </div>
-
-        <!-- GAME BOARD -->
-        <div class='game-board' id="game-board">
-          <div class="row game-board-row">
-            <div id="cell1" class="col-xs-4 game-board-col cell1"></div>
-            <div id="cell2" class="col-xs-4 game-board-col cell2"></div>
-            <div id="cell3" class="col-xs-4 game-board-col cell3"></div>
-          </div>
-          <div class="row game-board-row">
-            <div id="cell4" class="col-xs-4 game-board-col cell4"></div>
-            <div id="cell5" class="col-xs-4 game-board-col cell5"></div>
-            <div id="cell6" class="col-xs-4 game-board-col cell6"></div>
-          </div>
-          <div class="row game-board-row">
-            <div id="cell7" class="col-xs-4 game-board-col cell7"></div>
-            <div id="cell8" class="col-xs-4 game-board-col cell8"></div>
-            <div id="cell9" class="col-xs-4 game-board-col cell9"></div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- INFO BAR -->
-      <section id="info-bar" class='info-bar col-xs-4'>
-
-        <div class="info-bar-buttons" id="info-bar-buttons">
-          <button type="button" id="show-profile" class="btn btn-default navbar-btn info-bar-button">Profile</button>
-          <button type="button" id="show-game-status" class="btn btn-default navbar-btn info-bar-button">Game</button>
-        </div>
-
-        <div class="misc-message" id="misc-message">
-        </div>
-
-        <article class="profile-view" id="profile-view">
-          <div class="user-info" id="user-info">
-            <p>you have played</p>
-            <p><span id="num-games"></span> games</p>
-          </div>
-          <hr>
-          <div class="change-pw-box" id="change-pw-box">
-            <form id="change-password" class='change-password'>
-              <fieldset>
-                <legend>change your password:</legend>
-                <input type="password" name="passwords[old]" placeholder="Enter current password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
                 <br>
-                <input type="password" name="passwords[new]" placeholder="Choose new password">
-                <br>
-                <input class="submit" type="submit" name="submit" value="Change Password">
+                <input class="submit" type="submit" name="submit" value="Sign up">
               </fieldset>
             </form>
+            <form id="sign-in" class='auth-box-form sign-in'>
+              <fieldset>
+                  <legend>sign in to play!</legend>
+                  <input type="email" name="credentials[email]" placeholder="Enter your email">
+                  <br>
+                  <input type="password" name="credentials[password]" placeholder="Enter your password">
+                  <br>
+                  <input class="submit" type="submit" name="submit" value="Sign in">
+                </fieldset>
+            </form>
           </div>
-        </article>
 
-        <article class="game-status-view" id="game-status-view">
-          <div class="whose-turn" id="whose-turn">
-            <p id="active-player"></p>
-            <p>turn</p>
-          </div>
-          <div class="win-message" id="win-message">
-            <p class="winning-player" id="winning-player"></p>
-            <p>wins</p>
-            <p id="play-again" class="play-again">(click new game above to play again)</p>
-          </div>
-        </article>
+          <!-- GAME BOARD -->
+          <div class='game-board' id="game-board">
+            <div class="row game-board-row">
+              <div id="cell1" class="col-xs-4 game-board-col cell1"></div>
+              <div id="cell2" class="col-xs-4 game-board-col cell2"></div>
+              <div id="cell3" class="col-xs-4 game-board-col cell3"></div>
+            </div>
+            <div class="row game-board-row">
+              <div id="cell4" class="col-xs-4 game-board-col cell4"></div>
+              <div id="cell5" class="col-xs-4 game-board-col cell5"></div>
+              <div id="cell6" class="col-xs-4 game-board-col cell6"></div>
+            </div>
+            <div class="row game-board-row">
+              <div id="cell7" class="col-xs-4 game-board-col cell7"></div>
+              <div id="cell8" class="col-xs-4 game-board-col cell8"></div>
+              <div id="cell9" class="col-xs-4 game-board-col cell9"></div>
+            </div>
 
-      </section>
-    </body>
+          </div>
+        </section>
+
+        <!-- INFO BAR -->
+        <section id="info-bar" class='info-bar col-xs-5'>
+
+          <div class="info-bar-buttons" id="info-bar-buttons">
+            <button type="button" id="show-profile" class="btn btn-default navbar-btn info-bar-button">Profile</button>
+            <button type="button" id="show-game-status" class="btn btn-default navbar-btn info-bar-button">Game</button>
+          </div>
+
+          <div class="misc-message" id="misc-message">
+          </div>
+
+          <article class="profile-view" id="profile-view">
+            <div class="user-info" id="user-info">
+              <p>you have played</p>
+              <p><span id="num-games"></span> games</p>
+            </div>
+            <hr>
+            <div class="change-pw-box" id="change-pw-box">
+              <form id="change-password" class='change-password'>
+                <fieldset>
+                  <legend>change your password:</legend>
+                  <input type="password" name="passwords[old]" placeholder="Enter current password">
+                  <br>
+                  <input type="password" name="passwords[new]" placeholder="Choose new password">
+                  <br>
+                  <input class="submit" type="submit" name="submit" value="Change Password">
+                </fieldset>
+              </form>
+            </div>
+          </article>
+
+          <article class="game-status-view" id="game-status-view">
+            <div class="whose-turn" id="whose-turn">
+              <p id="active-player"></p>
+              <p>turn</p>
+            </div>
+            <div class="win-message" id="win-message">
+              <p class="winning-player" id="winning-player"></p>
+              <p>wins</p>
+              <p id="play-again" class="play-again">(click new game above to play again)</p>
+            </div>
+          </article>
+
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

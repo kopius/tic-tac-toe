@@ -4,8 +4,8 @@ $border-box: border-box;
 
 body {
   background: $background;
-  color: $font-color;
   box-sizing: $border-box;
+  color: $font-color;
   font-family: $body-font;
   margin: 50px auto;
 }
@@ -17,6 +17,16 @@ nav {
   color: $font-color;
   height: 5em;
   position: relative;
+  width: 100%;
+}
+
+.container-fluid {
+  width: 90%;
+  position: absolute;
+}
+
+.row-main {
+  position: absolute;
   width: 100%;
 }
 
@@ -80,7 +90,8 @@ button,
   border-radius: 4px;
   box-sizing: $border-box;
   height: $box-height;
-  margin: 20px;
+  position: absolute;
+  left: 0;
 
   .game-board {
     margin: 50px auto;
@@ -129,8 +140,9 @@ button,
   border-radius: 4px;
   box-sizing: $border-box;
   height: $box-height;
-  margin: 20px;
   padding: 0;
+  position: absolute;
+  right: 0;
 
   .info-bar-buttons {
     margin: 3px auto;
@@ -147,6 +159,7 @@ button,
 
   .misc-message {
     color: $alert-text;
+    font-size: 1.5em;
     margin: 10px auto;
     min-height: 1.5em;
     text-align: center;
@@ -172,7 +185,7 @@ button,
     }
 
     .play-again {
-      font-size: 1em;
+      font-size: 1.5em;
     }
 
     > .change-pw-box {

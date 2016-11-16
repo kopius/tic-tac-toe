@@ -1,7 +1,8 @@
 'use strict';
 
 const app = {
-  host: 'https://aqueous-atoll-85096.herokuapp.com'
+  host: 'https://pacific-taiga-64187.herokuapp.com'
+  // host: 'localhost:4741'
 };
 
 module.exports = app;

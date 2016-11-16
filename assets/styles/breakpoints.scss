@@ -5,7 +5,6 @@ body {
   @include breakpoint(tiny) {
     max-width: 100%;
     padding: 0;
-    margin-top: 0;
   }
 
   // 767px < small < 992x
@@ -21,6 +20,13 @@ body {
   // 1200px <= large
   @include breakpoint(large) {
     max-width: 1190px;
+  }
+}
+
+.container-fluid {
+  @include breakpoint(tiny) {
+    width: 95%;
+    margin: 2.5%;
   }
 }
 
@@ -56,12 +62,13 @@ nav {
     margin: 20px 0;
     padding: 10px;
     width: 100%;
+    position: static;
   }
 }
 
 .info-bar {
   @include breakpoint(tiny) {
-    margin: 20px 10%;
-    width: 80%;
+    width: 100%;
+    position: static;
   }
 }
